@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".launch.LaunchActivity"
+    android:background="@color/background"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:foregroundGravity="center"
+        android:padding="15dp"
+        android:text="Добро пожаловать в Nimble"
+        android:textAlignment="center"
+        android:textColor="@color/textcolor"
+        android:textSize="32dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="374dp"
+        app:srcCompat="@drawable/_146a9434e0244957899d4f570639043_1" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginHorizontal="31dp"
+        android:layout_marginTop="5dp"
+        android:text="Качественная одежда, от лучших брендов и модельеров"
+        android:textAlignment="center"
+        android:textColor="@color/textcolor"
+        android:textSize="19dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/nextbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="31dp"
+        android:textSize="32dp"
+        android:layout_marginTop="35dp"
+        android:width="300dp"
+        android:height="75dp"
+        android:background="@drawable/graybutton"
+        android:onClick="next"
+        android:text="Далее"
+        android:textColor="@color/textcolor"
+        android:viewportWidth="299"
+        android:viewportHeight="75" />
+
+</LinearLayout>
