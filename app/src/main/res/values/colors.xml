@@ -9,7 +9,9 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="background">#252424</color>
-    <color name="gray">#8D8E8E</color>
+    <color name="colorbutton">#8D8E8E</color>
+    <color name="backgroundtextview">#8D8E8E</color>
     <color name="textcolor">#EDF5E1</color>
+    <color name="invisible">#33FFFFFF</color>
 
 </resources>
