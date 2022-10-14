@@ -6,10 +6,10 @@ import android.os.Bundle
 import android.view.View
 import com.example.nimble.R
 
-class LaunchActivity3 : AppCompatActivity() {
+class WelcomeActivity3 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_launch3)
+        setContentView(R.layout.activity_welcome3)
     }
 
     fun next(view: View) {

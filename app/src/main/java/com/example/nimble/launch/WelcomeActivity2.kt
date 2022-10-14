@@ -6,15 +6,15 @@ import android.os.Bundle
 import android.view.View
 import com.example.nimble.R
 
-class LaunchActivity2 : AppCompatActivity() {
+class WelcomeActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_launch2)
+        setContentView(R.layout.activity_welcome2)
     }
 
     fun next(view: View) {
 
-        val intent = Intent(this, LaunchActivity3::class.java)
+        val intent = Intent(this, WelcomeActivity3::class.java)
         startActivity(intent)
 
     }

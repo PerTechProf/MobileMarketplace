@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".launch.LaunchActivity"
+    tools:context=".launch.WelcomeActivity1"
     android:background="@color/background"
     android:orientation="vertical"
->
+    >
 
     <TextView
         android:id="@+id/textView"
@@ -26,7 +26,7 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="374dp"
-        app:srcCompat="@drawable/png_transparent_graphics_cards_video_adapters_high_performance_gaming_graphics_card_gtx_980_gaming_4g_gddr5_sdram_geforce_pci_express_nvidia_electronics_electronic_device_geforce_1" />
+        app:srcCompat="@drawable/png_transparent_paper_bag_shopping_bags_trolleys_business_bag_white_food_recycling_1" />
 
     <TextView
         android:id="@+id/textView2"
@@ -34,18 +34,18 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginHorizontal="31dp"
-        android:text="Добро пожаловать на самую дружелюбную торговую площадку, мы очень рады что вы выбрали нас"
+        android:layout_marginTop="5dp"
+        android:text="Всегда качественные и свежие продукты"
         android:textAlignment="center"
         android:textColor="@color/textcolor"
-        android:layout_marginTop="5dp"
         android:textSize="19dp" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/nextbutton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="32dp"
         android:layout_marginHorizontal="31dp"
+        android:textSize="32dp"
         android:layout_marginTop="35dp"
         android:width="300dp"
         android:height="75dp"
@@ -55,6 +55,5 @@
         android:textColor="@color/textcolor"
         android:viewportWidth="299"
         android:viewportHeight="75" />
-
 
 </LinearLayout>
