@@ -14,6 +14,21 @@
         tools:targetApi="31">
 
         <activity
+            android:name=".launch.LaunchActivity"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <activity
             android:name=".signup.SignupActivity"
             android:exported="false">
             <meta-data
@@ -21,7 +36,7 @@
                 android:value="" />
         </activity>
 
-       <activity
+        <activity
             android:name=".launch.MainActivity"
             android:exported="false">
             <meta-data
@@ -31,12 +46,7 @@
 
         <activity
             android:name=".launch.WelcomeActivity1"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="false">
 
             <meta-data
                 android:name="android.app.lib_name"
@@ -45,29 +55,21 @@
 
         <activity
             android:name=".signin.SigninActivity"
-            android:exported="true">
-
-
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".launch.WelcomeActivity2"
             android:exported="true">
-
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".launch.WelcomeActivity3"
             android:exported="true">
-
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
