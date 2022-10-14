@@ -13,5 +13,6 @@
     <color name="backgroundtextview">#8D8E8E</color>
     <color name="textcolor">#EDF5E1</color>
     <color name="invisible">#33FFFFFF</color>
+    <color name="bottom">#474747</color>
 
 </resources>
