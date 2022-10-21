@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_catalog" />
     <fragment
         android:id="@+id/miAccount"
-        android:name="com.example.nimble.SigninFragment"
+        android:name="com.example.nimble.signin.SigninFragment"
         android:label="@string/signin"
         tools:layout="@layout/fragment_signin" />
     <fragment

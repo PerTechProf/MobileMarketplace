@@ -18,7 +18,9 @@ class LaunchActivity : AppCompatActivity() {
         sp = getSharedPreferences("APP_SETTINGS", Context.MODE_PRIVATE)
         val handler = Handler()
         handler.postDelayed({start()}, 300)
+        supportActionBar?.hide()
     }
+
 
     fun start(){
         val flag = sp.getBoolean("flag", false)

@@ -14,8 +14,9 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:layout_marginTop="40dp"
-        app:srcCompat="@drawable/pngtree_user_icon_symbol_design_user_icon_isolated_design_png_image_1746919_4" />
+        app:srcCompat="@drawable/nimble_logo" />
 
     <EditText
         android:id="@+id/emailEdit"
@@ -58,16 +59,7 @@
         android:layout_marginTop="10dp"
         android:background="@drawable/grayborder"
         android:onClick="signup"
-        android:text="Регистрация"
+        android:text="Зарегистрироваться"
         android:textColor="@color/textcolor" />
-
-<!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
-<!--        android:id="@+id/bottomNavigationView"-->
-<!--        style="@style/TextAppearance.AppCompat.Widget.Button.Colored"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="bottom"-->
-<!--        android:background="@color/actionbarcolor"-->
-<!--        app:menu="@menu/bottom_app_bar" />-->
 
 </LinearLayout>

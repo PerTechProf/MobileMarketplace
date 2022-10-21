@@ -10,6 +10,7 @@ class WelcomeActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_welcome2)
+        supportActionBar?.hide()
     }
 
     fun next(view: View) {
