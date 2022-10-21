@@ -1,4 +1,4 @@
-package com.example.nimble.launch
+package com.example.nimble.welcome
 
 import android.content.Context
 import android.content.Intent
@@ -6,6 +6,7 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import com.example.nimble.MainActivity
 import com.example.nimble.R
 
 class LaunchActivity : AppCompatActivity() {

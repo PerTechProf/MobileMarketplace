@@ -1,9 +1,10 @@
-package com.example.nimble.launch
+package com.example.nimble.welcome
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.example.nimble.MainActivity
 import com.example.nimble.R
 
 class WelcomeActivity3 : AppCompatActivity() {
