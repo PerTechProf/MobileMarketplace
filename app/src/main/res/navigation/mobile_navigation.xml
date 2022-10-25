@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/miSearch"
-        android:name="com.example.nimble.CatalogFragment"
+        android:name="com.example.nimble.catalog.CatalogFragment"
         android:label="@string/catalog"
         tools:layout="@layout/fragment_catalog" />
     <fragment
