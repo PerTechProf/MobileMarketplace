@@ -1,4 +1,4 @@
-package com.example.nimble.catalog
+package com.example.nimble.pannier
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,23 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.nimble.R
 
-
-class CatalogFragment : Fragment() {
-
+class PannierFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_catalog, container, false)
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_pannier, container, false)
     }
 
-    private fun dataInitialize(){
-
-
-
-
-
-    }
 
 }

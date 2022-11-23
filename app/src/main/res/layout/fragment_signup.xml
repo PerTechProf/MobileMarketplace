@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".signup.SignupFragment">
+    tools:context=".signup.SignupFragment"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    >
 
     <TextView
         android:id="@+id/textView2"
@@ -20,75 +24,69 @@
         android:id="@+id/loginEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="31dp"
+        android:inputType="textEmailAddress"
         android:background="@drawable/grayborderinv"
         android:hint="Логин"
-        android:inputType="textEmailAddress"
-        android:padding="15dp"
         android:textColorHint="@color/textcolor"
-        tools:layout_editor_absoluteX="31dp"
-        tools:layout_editor_absoluteY="157dp" />
+        android:padding="15dp"
+        android:layout_marginHorizontal="31dp"
+        android:layout_marginTop="18dp"/>
 
     <EditText
         android:id="@+id/emailEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="31dp"
+        android:inputType="textEmailAddress"
         android:background="@drawable/grayborderinv"
         android:hint="Почта"
-        android:inputType="textEmailAddress"
-        android:padding="15dp"
         android:textColorHint="@color/textcolor"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="223dp" />
+        android:padding="15dp"
+        android:layout_marginHorizontal="31dp"
+        android:layout_marginTop="10dp"/>
 
     <EditText
         android:id="@+id/passwordEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="31dp"
+        android:inputType="textPassword"
         android:background="@drawable/grayborderinv"
         android:hint="Пароль"
-        android:inputType="textPassword"
-        android:padding="15dp"
         android:textColorHint="@color/textcolor"
-        tools:layout_editor_absoluteX="31dp"
-        tools:layout_editor_absoluteY="288dp" />
+        android:padding="15dp"
+        android:layout_marginHorizontal="31dp"
+        android:layout_marginTop="10dp"/>
 
     <EditText
         android:id="@+id/repasswordEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="31dp"
+        android:inputType="textPassword"
         android:background="@drawable/grayborderinv"
         android:hint="Повтоорите Пароль"
-        android:inputType="textPassword"
-        android:padding="15dp"
         android:textColorHint="@color/textcolor"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="349dp" />
+        android:padding="15dp"
+        android:layout_marginHorizontal="31dp"
+        android:layout_marginTop="10dp"/>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="31dp"
-        android:background="@drawable/grayborder"
         android:text="Зарегистрироваться"
         android:textColor="@color/textcolor"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="512dp" />
+        android:background="@drawable/grayborder"
+        android:layout_marginHorizontal="31dp"
+        android:layout_marginTop="44dp"/>
 
-    <Button
-        android:id="@+id/button2"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/back"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="31dp"
-        android:background="@drawable/grayborder"
-        android:onClick="signin"
         android:text="У меня уже есть аккаунт"
+        android:onClick="signin"
         android:textColor="@color/textcolor"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="447dp" />
+        android:background="@drawable/grayborder"
+        android:layout_marginHorizontal="31dp"
+        android:layout_marginTop="10dp"/>
 
-</FrameLayout>
+</LinearLayout>
