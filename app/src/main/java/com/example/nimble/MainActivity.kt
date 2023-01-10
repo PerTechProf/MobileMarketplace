@@ -16,9 +16,12 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
+    private val serverUrl = "ws://0.0.0.0:8086/socketServer/abc"
+
     private lateinit var binding: ActivityMainBinding
     lateinit var navController: NavController
 
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

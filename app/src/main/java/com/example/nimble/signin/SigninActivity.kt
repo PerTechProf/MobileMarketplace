@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.example.nimble.R
-import com.example.nimble.signup.SignupActivity
 
 class SigninActivity : AppCompatActivity() {
 
@@ -16,9 +15,5 @@ class SigninActivity : AppCompatActivity() {
         supportActionBar?.hide()
     }
 
-    fun signup(view: View) {
-        val intent = Intent( this, SignupActivity::class.java)
-        startActivity(intent)
-    }
 
 }

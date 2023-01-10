@@ -3,90 +3,162 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".signup.SignupFragment"
     android:background="@color/background"
     android:orientation="vertical"
-    android:gravity="center_horizontal"
-    >
+    android:gravity="center_horizontal">
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Создание аккаунта"
-        android:textSize="40dp"
+        android:textSize="25dp"
         android:gravity="center"
         android:padding="10dp"
         android:textColor="@color/textcolor"
         android:background="@drawable/graybordertop"/>
 
-    <EditText
-        android:id="@+id/loginEdit"
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:background="@drawable/grayborderinv"
-        android:hint="Логин"
-        android:textColorHint="@color/textcolor"
-        android:padding="15dp"
-        android:layout_marginHorizontal="31dp"
-        android:layout_marginTop="18dp"/>
+        android:layout_margin="12dp"
+        app:cardElevation="8dp"
+        app:strokeColor="@color/black"
+        app:strokeWidth="0.5dp"
+        app:cardCornerRadius="0dp"
+        >
 
-    <EditText
-        android:id="@+id/emailEdit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:background="@drawable/grayborderinv"
-        android:hint="Почта"
-        android:textColorHint="@color/textcolor"
-        android:padding="15dp"
-        android:layout_marginHorizontal="31dp"
-        android:layout_marginTop="10dp"/>
 
-    <EditText
-        android:id="@+id/passwordEdit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:background="@drawable/grayborderinv"
-        android:hint="Пароль"
-        android:textColorHint="@color/textcolor"
-        android:padding="15dp"
-        android:layout_marginHorizontal="31dp"
-        android:layout_marginTop="10dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/actionbarcolor">
 
-    <EditText
-        android:id="@+id/repasswordEdit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:background="@drawable/grayborderinv"
-        android:hint="Повтоорите Пароль"
-        android:textColorHint="@color/textcolor"
-        android:padding="15dp"
-        android:layout_marginHorizontal="31dp"
-        android:layout_marginTop="10dp"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/graybutton">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Зарегистрироваться"
-        android:textColor="@color/textcolor"
-        android:background="@drawable/grayborder"
-        android:layout_marginHorizontal="31dp"
-        android:layout_marginTop="44dp"/>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:id="@+id/firstNameEdit"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/graybutton"
+                    android:hint="Имя"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="12dp"
+                    android:inputType="text"/>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/back"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="У меня уже есть аккаунт"
-        android:onClick="signin"
-        android:textColor="@color/textcolor"
-        android:background="@drawable/grayborder"
-        android:layout_marginHorizontal="31dp"
-        android:layout_marginTop="10dp"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/graybutton"
+                android:layout_marginTop="12dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/lastNameEdit"
+                    android:background="@drawable/graybutton"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="12dp"
+                    android:hint="Фамилия"
+                    android:inputType="text"/>
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/graybutton"
+                android:layout_marginTop="12dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/emailEdit"
+                    android:background="@drawable/graybutton"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="12dp"
+                    android:hint="Почта"
+                    android:inputType="textEmailAddress"
+                    />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true"
+                app:counterEnabled="true"
+                app:counterMaxLength="15"
+                android:layout_marginTop="12dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/graybutton"
+                    android:id="@+id/passwordEditRegist"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="12dp"
+                    android:hint="Пароль"
+                    android:inputType="textPassword"/>
+
+
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true"
+                app:counterEnabled="true"
+                app:counterMaxLength="15"
+                android:layout_marginTop="12dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/graybutton"
+                android:id="@+id/conPasswordEdit"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="12dp"
+                android:hint="Повторить пароль"
+                android:inputType="textPassword"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+           <com.google.android.material.button.MaterialButton
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/signupButton"
+               android:insetBottom="0dp"
+               android:insetTop="0dp"
+               android:text="Зарегистрироваться"
+               android:backgroundTint="@color/colorbutton"
+               android:textColor="@color/textcolor"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/back"
+                android:layout_marginTop="12dp"
+                android:insetBottom="0dp"
+                android:insetTop="0dp"
+                android:backgroundTint="@color/colorbutton"
+                android:textColor="@color/textcolor"
+                android:text="У меня уже есть аккаунт"/>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
 
 </LinearLayout>
