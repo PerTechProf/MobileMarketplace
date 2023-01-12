@@ -26,9 +26,13 @@ class SigninFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         binding.signupButton.setOnClickListener{
             MAIN.navController.navigate(R.id.action_miAccount_to_signupFragment)
         }
+
+
+
     }
 
 }

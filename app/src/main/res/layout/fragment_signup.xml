@@ -40,14 +40,15 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/graybutton">
+                android:textColorHint="@color/textcolor"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:id="@+id/firstNameEdit"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/graybutton"
-                    android:hint="Имя"
+                    android:hint="@string/FirstName"
                     android:paddingHorizontal="8dp"
                     android:paddingVertical="12dp"
                     android:inputType="text"/>
@@ -58,17 +59,18 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/graybutton"
-                android:layout_marginTop="12dp">
+                android:textColorHint="@color/textcolor"
+                android:layout_marginTop="12dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/lastNameEdit"
-                    android:background="@drawable/graybutton"
                     android:paddingHorizontal="8dp"
                     android:paddingVertical="12dp"
-                    android:hint="Фамилия"
+                    android:hint="@string/LastName"
                     android:inputType="text"/>
 
 
@@ -77,17 +79,18 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/graybutton"
-                android:layout_marginTop="12dp">
+                android:layout_marginTop="12dp"
+                android:textColorHint="@color/textcolor"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/emailEdit"
-                    android:background="@drawable/graybutton"
                     android:paddingHorizontal="8dp"
                     android:paddingVertical="12dp"
-                    android:hint="Почта"
+                    android:hint="@string/Email"
                     android:inputType="textEmailAddress"
                     />
 
@@ -100,16 +103,18 @@
                 app:passwordToggleEnabled="true"
                 app:counterEnabled="true"
                 app:counterMaxLength="15"
-                android:layout_marginTop="12dp">
+                android:layout_marginTop="12dp"
+                android:textColorHint="@color/textcolor"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/graybutton"
                     android:id="@+id/passwordEditRegist"
                     android:paddingHorizontal="8dp"
                     android:paddingVertical="12dp"
-                    android:hint="Пароль"
+                    android:hint="@string/Password"
                     android:inputType="textPassword"/>
 
 
@@ -123,16 +128,18 @@
                 app:passwordToggleEnabled="true"
                 app:counterEnabled="true"
                 app:counterMaxLength="15"
-                android:layout_marginTop="12dp">
+                android:layout_marginTop="12dp"
+                android:textColorHint="@color/textcolor"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/graybutton"
                 android:id="@+id/conPasswordEdit"
                 android:paddingHorizontal="8dp"
                 android:paddingVertical="12dp"
-                android:hint="Повторить пароль"
+                android:hint="@string/rePassword"
                 android:inputType="textPassword"/>
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -140,9 +147,10 @@
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:id="@+id/signupButton"
+               android:layout_marginTop="12dp"
                android:insetBottom="0dp"
                android:insetTop="0dp"
-               android:text="Зарегистрироваться"
+               android:text="@string/Register"
                android:backgroundTint="@color/colorbutton"
                android:textColor="@color/textcolor"/>
 
@@ -155,7 +163,7 @@
                 android:insetTop="0dp"
                 android:backgroundTint="@color/colorbutton"
                 android:textColor="@color/textcolor"
-                android:text="У меня уже есть аккаунт"/>
+                android:text="@string/Back"/>
 
         </LinearLayout>
 
