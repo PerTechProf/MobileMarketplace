@@ -6,13 +6,13 @@ import android.util.Log
 import android.util.Patterns
 import android.view.*
 import android.widget.Button
+import android.widget.Toast
+import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.nimble.ApiRequest
-import com.example.nimble.BASE_URL
-import com.example.nimble.MAIN
-import com.example.nimble.R
+import com.example.nimble.*
 import com.example.nimble.databinding.FragmentSignupBinding
+import com.squareup.moshi.Moshi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -23,7 +23,7 @@ import java.net.Socket
 import java.util.Scanner
 
 
-class SignupFragment : Fragment(), View.OnClickListener, View.OnFocusChangeListener, View.OnKeyListener {
+class SignupFragment : Fragment() {
 
     lateinit var binding: FragmentSignupBinding
 
@@ -33,123 +33,139 @@ class SignupFragment : Fragment(), View.OnClickListener, View.OnFocusChangeListe
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentSignupBinding.inflate(layoutInflater, container, false)
-        return binding.root
 
-        binding.firstNameEdit.onFocusChangeListener = this
-        binding.emailEdit.onFocusChangeListener = this
-        binding.passwordEditRegist.onFocusChangeListener = this
-        binding.conPasswordEdit.onFocusChangeListener = this
 
         binding.signupButton.setOnClickListener { signup() }
+        emailFocusListener()
+        validatePasswordFocusListener()
+        validateConfirmPasswordFocusListener()
+        validatePasswordAndConfirmPasswordFocusListener()
+        firstNameFocusListener()
+        lastNameFocusListener()
 
 
+        return binding.root
     }
 
-    private fun validateFullName(): Boolean{
-        var errorMassage: String? = null
-        val value: String = binding.firstNameEdit.text.toString()
-        if(value.isEmpty()){
-            errorMassage = "Укажите полное имя."
-        }
-
-        if(errorMassage != null){
-            binding.firstNameEdit.apply {
-                error = errorMassage
+    private fun emailFocusListener()
+    {
+        binding.emailEdit.setOnFocusChangeListener{ _, focused->
+            if(!focused)
+            {
+                binding.emailContainer.helperText = validEmail()
             }
         }
-        return errorMassage == null
     }
 
-    private fun validatePassword(): Boolean{
-        var error: String? = null
-        val value = binding.passwordEditRegist.toString()
-        if(value.isEmpty()){
-            error = "Необходим пароль"
-        }else if(value.length < 6){
-            error = "Пароль должен состоять из 6 символов"
+    private fun validatePasswordFocusListener()
+    {
+        binding.passwordEditRegist.setOnFocusChangeListener{ _, focused->
+            if(!focused)
+            {
+                binding.passwordContainer.helperText = validatePassword()
+            }
         }
-        return error == null
     }
 
-    private fun validateConfirmPassword(): Boolean{
-        var error: String? = null
-        val value = binding.conPasswordEdit.toString()
-        if(value.isEmpty()){
-            error = "Требуется подтверждение пароля"
-        }else if(value.length < 6){
-            error = "Подтверждение пароля должно состоять из 6 символов"
+    private fun validateConfirmPasswordFocusListener()
+    {
+        binding.passwordEditRegist.setOnFocusChangeListener{ _, focused->
+            if(!focused)
+            {
+                binding.passwordContainer.helperText = validateConfirmPassword()
+            }
         }
-        return error == null
     }
 
-    private fun validatePasswordAndConfirmPassword(): Boolean{
-        var error: String? = null
+    private fun validatePasswordAndConfirmPasswordFocusListener()
+    {
+        binding.conPasswordEdit.setOnFocusChangeListener{ _, focused->
+            if(!focused)
+            {
+                binding.conPasswordContainer.helperText = validatePasswordAndConfirmPassword()
+            }
+        }
+    }
+
+    private fun firstNameFocusListener()
+    {
+        binding.firstNameEdit.setOnFocusChangeListener{ _, focused->
+            if(!focused)
+            {
+                binding.firstNameContainer.helperText = validFirstName()
+            }
+        }
+    }
+
+    private fun lastNameFocusListener()
+    {
+        binding.lastNameEdit.setOnFocusChangeListener{ _, focused->
+            if(!focused)
+            {
+                binding.lastNameContainer.helperText = validLastName()
+            }
+        }
+    }
+
+    private fun validFirstName(): String? {
+        val firstNameText = binding.firstNameEdit.text.toString()
+        if(firstNameText.isEmpty()){
+            return "Укажите имя"
+        }
+        return null
+    }
+
+    private fun validLastName(): String? {
+        val firstNameText = binding.lastNameEdit.text.toString()
+        if(firstNameText.isEmpty()){
+            return "Укажите фамилию"
+        }
+        return null
+    }
+
+
+
+    private fun validEmail(): String? {
+        val emailText = binding.emailEdit.text.toString()
+        if(!Patterns.EMAIL_ADDRESS.matcher(emailText).matches())
+        {
+            return "Адрес электронной почты является недействительным"
+        }else if(emailText.isEmpty()){
+            return "Email уже зарегистрирован"
+        }
+        return null
+    }
+
+    private fun validatePassword(): String? {
+        val passwordText = binding.passwordEditRegist.toString()
+        if(passwordText.length < 6)
+        {
+            return "Пароль должен состоять из 6 символов"
+        }
+        return null
+    }
+
+
+    private fun validateConfirmPassword(): String? {
+        val repasswordText = binding.conPasswordEdit.toString()
+        if(repasswordText.isEmpty()){
+           return "Требуется подтверждение пароля"
+        }else if(repasswordText.length < 6){
+            return "Подтверждение пароля должно состоять из 6 символов"
+        }
+        return null
+    }
+
+    private fun validatePasswordAndConfirmPassword(): String? {
         val password = binding.passwordEditRegist.text.toString()
         val confirmPassword = binding.conPasswordEdit.text.toString()
         if(password != confirmPassword){
-            error = "Пароли не совпадают"
+            return "Пароли не совпадают"
         }
-        return error == null
-    }
-
-    private fun validateEmail(): Boolean{
-        var error: String? = null
-        val value = binding.emailEdit.text.toString()
-        if(value.isEmpty()){
-            error = "Email уже зарегистрирован"
-        }else if(!Patterns.EMAIL_ADDRESS.matcher(value).matches()){
-            error = "Адрес электронной почты является недействительным"
-        }
-        return error == null
+        return null
     }
 
 
-
-
-    override fun onFocusChange(view: View?, hasFocus: Boolean){
-        if(view != null){
-            when(view.id){
-                R.id.firstNameEdit -> {
-                    if(hasFocus){
-                        if(binding.firstNameEdit.isEnabled){
-                            binding.firstNameEdit.error = false.toString()
-                        }
-                    }else{
-                        validateFullName()
-                    }
-                }
-                R.id.emailEdit -> {
-                    if(hasFocus){
-                        if(binding.emailEdit.isEnabled){
-                            binding.emailEdit.error = false.toString()
-                        }
-                    }else{
-                        validateEmail()
-                    }
-                }
-                R.id.passwordEditRegist -> {
-                    if(hasFocus){
-                        if(binding.passwordEditRegist.isEnabled){
-                            binding.passwordEditRegist.error = false.toString()
-                        }
-                    }else {
-                        validatePassword()
-                    }
-                }
-
-                R.id.conPasswordEdit -> {
-                    if(hasFocus){
-                        if(binding.conPasswordEdit.isEnabled){
-                            binding.conPasswordEdit.error = false.toString()
-                        }
-                    }else {
-                        validateConfirmPassword()
-                    }
-                }
-
-            }
-        }
-    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.back.setOnClickListener{
@@ -157,13 +173,6 @@ class SignupFragment : Fragment(), View.OnClickListener, View.OnFocusChangeListe
         }
     }
 
-    override fun onClick(p0: View?) {
-        TODO("Not yet implemented")
-    }
-
-    override fun onKey(p0: View?, p1: Int, p2: KeyEvent?): Boolean {
-        return false
-    }
 
     fun signup(){
         val email = binding.emailEdit.text.toString()
@@ -179,12 +188,15 @@ class SignupFragment : Fragment(), View.OnClickListener, View.OnFocusChangeListe
 
         GlobalScope.launch(Dispatchers.IO){
             try {
-                val response = api.singnup(email, password, firstName, lastName)
+                val response = api.signup(RegisterReceiveRemote(email, firstName, lastName, password))
                 Log.d("MAIN", "Response: $response")
             }catch (e: Exception){
                 Log.e("MAIN", "Error: ${e.message}")
             }
         }
+        val myToast = Toast.makeText(activity, "Вы авторизованны!", Toast.LENGTH_SHORT).show()
+        MAIN.navController.navigate(R.id.action_signupFragment_to_miAccount)
+
     }
 
 }

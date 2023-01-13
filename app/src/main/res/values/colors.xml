@@ -14,5 +14,6 @@
     <color name="textcolor">#EDF5E1</color>
     <color name="invisible">#33FFFFFF</color>
     <color name="actionbarcolor">#474747</color>
+    <color name="red">#FF0000</color>
 
 </resources>

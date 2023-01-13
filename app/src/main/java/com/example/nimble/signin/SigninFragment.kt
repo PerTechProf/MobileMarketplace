@@ -1,15 +1,22 @@
 package com.example.nimble.signin
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.nimble.MAIN
-import com.example.nimble.R
+import android.widget.Toast
+import com.example.nimble.*
 import com.example.nimble.databinding.FragmentSigninBinding
-import com.example.nimble.databinding.FragmentSignupBinding
-import com.example.nimble.signup.SignupFragment
+import kotlinx.android.synthetic.main.fragment_signup.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import retrofit2.Retrofit
+import retrofit2.converter.moshi.MoshiConverterFactory
 
 
 class SigninFragment : Fragment() {
@@ -21,6 +28,7 @@ class SigninFragment : Fragment() {
         savedInstanceState: Bundle?
     ):View? {
         binding = FragmentSigninBinding.inflate(layoutInflater, container, false)
+        binding.signinButton.setOnClickListener { signin() }
         return binding.root
     }
 
@@ -31,8 +39,40 @@ class SigninFragment : Fragment() {
             MAIN.navController.navigate(R.id.action_miAccount_to_signupFragment)
         }
 
+    }
+
+    fun signin() {
+        val email = binding.emailEdit.text.toString()
+        val password = binding.passwordEdit.text.toString()
 
 
+        val api = Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(MoshiConverterFactory.create().asLenient())
+            .build()
+            .create(ApiRequest::class.java)
+
+
+        GlobalScope.launch(Dispatchers.IO) {
+            try {
+                val response = api.signin(LoginReceiveRemote(email, password))
+                Log.d("MAIN", "Response: $response")
+                withContext(Dispatchers.Main){
+                    val token = response.body()?.token
+                    if (token == null) {
+                        Toast.makeText(activity, "Пользователь отсудствует", Toast.LENGTH_SHORT).show()
+                    }else{
+                        val intent = Intent(activity, MainActivity::class.java)
+                        startActivity(intent)
+                    }
+                }
+
+            }catch (e: Exception){
+                Log.e("MAIN", "Error: ${e.message}")
+            }
+        }
     }
 
 }
+
+//        response = api.signin(LoginReceiveRemote(email, password))
