@@ -64,6 +64,7 @@ class SigninFragment : Fragment() {
                     }else{
                         val intent = Intent(activity, MainActivity::class.java)
                         startActivity(intent)
+                        Toast.makeText(activity, "Добро пожаловать", Toast.LENGTH_SHORT).show()
                     }
                 }
 
