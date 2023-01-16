@@ -1,4 +1,4 @@
-package com.example.nimble.launch
+package com.example.nimble.welcome
 
 import android.content.Context
 import android.content.Intent
@@ -8,20 +8,19 @@ import android.os.Bundle
 import android.os.Handler
 import com.example.nimble.MainActivity
 import com.example.nimble.R
-import com.example.nimble.welcome.WelcomeActivity1
 
 class LaunchActivity : AppCompatActivity() {
     lateinit var sp: SharedPreferences
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_launch)
 
         sp = getSharedPreferences("APP_SETTINGS", Context.MODE_PRIVATE)
         val handler = Handler()
-        handler.postDelayed({start()}, 3000)
-
+        handler.postDelayed({start()}, 300)
+        supportActionBar?.hide()
     }
+
 
     fun start(){
         val flag = sp.getBoolean("flag", false)

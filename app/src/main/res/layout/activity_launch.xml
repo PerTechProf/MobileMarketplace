@@ -4,57 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".launch.LaunchActivity"
-    android:background="@color/background"
-    android:orientation="vertical"
->
+    tools:context=".welcome.LaunchActivity"
+    android:layout_gravity="center"
+    android:background="@color/background">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:foregroundGravity="center"
-        android:padding="15dp"
-        android:text="Добро пожаловать в Nimble"
-        android:textAlignment="center"
-        android:textColor="@color/textcolor"
-        android:textSize="32dp"
-        android:textStyle="bold" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="374dp"
-        app:srcCompat="@drawable/png_transparent_graphics_cards_video_adapters_high_performance_gaming_graphics_card_gtx_980_gaming_4g_gddr5_sdram_geforce_pci_express_nvidia_electronics_electronic_device_geforce_1" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginHorizontal="31dp"
-        android:text="Добро пожаловать на самую дружелюбную торговую площадку, мы очень рады что вы выбрали нас"
-        android:textAlignment="center"
-        android:textColor="@color/textcolor"
-        android:layout_marginTop="5dp"
-        android:textSize="19dp" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/nextbutton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="32dp"
-        android:layout_marginHorizontal="31dp"
-        android:layout_marginTop="35dp"
-        android:width="300dp"
-        android:height="75dp"
-        android:background="@drawable/graybutton"
-        android:onClick="next"
-        android:text="Далее"
-        android:textColor="@color/textcolor"
-        android:viewportWidth="299"
-        android:viewportHeight="75" />
-
+        android:layout_weight="1"
+        app:srcCompat="@drawable/nimble_logo" />
 
 </LinearLayout>

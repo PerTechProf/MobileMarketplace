@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".launch.LaunchActivity"
+    tools:context=".welcome.WelcomeActivity1"
     android:background="@color/background"
     android:orientation="vertical"
     >
@@ -26,7 +26,7 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="374dp"
-        app:srcCompat="@drawable/_146a9434e0244957899d4f570639043_1" />
+        app:srcCompat="@drawable/png_transparent_paper_bag_shopping_bags_trolleys_business_bag_white_food_recycling_1" />
 
     <TextView
         android:id="@+id/textView2"
@@ -35,7 +35,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginHorizontal="31dp"
         android:layout_marginTop="5dp"
-        android:text="Качественная одежда, от лучших брендов и модельеров"
+        android:text="Всегда качественные и свежие продукты"
         android:textAlignment="center"
         android:textColor="@color/textcolor"
         android:textSize="19dp" />

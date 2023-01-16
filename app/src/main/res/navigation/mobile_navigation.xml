@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/miSearch">
+
+    <fragment
+        android:id="@+id/miSearch"
+        android:name="com.example.nimble.catalog.CatalogFragment"
+        android:label="@string/catalog"
+        tools:layout="@layout/fragment_catalog" />
+    <fragment
+        android:id="@+id/miAccount"
+        android:name="com.example.nimble.signin.SigninFragment"
+        android:label="@string/signin"
+        tools:layout="@layout/fragment_signin" >
+        <action
+            android:id="@+id/action_miAccount_to_signupFragment"
+            app:destination="@id/signupFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/miShopping"
+        android:name="com.example.nimble.pannier.PannierFragment"
+        android:label="@string/pannier"
+        tools:layout="@layout/fragment_pannier" />
+    <fragment
+        android:id="@+id/signupFragment"
+        android:name="com.example.nimble.signup.SignupFragment"
+        android:label="fragment_signup"
+        tools:layout="@layout/fragment_signup" >
+        <action
+            android:id="@+id/action_signupFragment_to_miAccount"
+            app:destination="@id/miAccount" />
+    </fragment>
+</navigation>

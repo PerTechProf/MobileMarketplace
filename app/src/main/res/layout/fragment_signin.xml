@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".signin.SigninFragment"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_marginTop="0dp"
+        app:srcCompat="@drawable/nimble_logo" />
+
+    <EditText
+        android:id="@+id/emailEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/grayborderinv"
+        android:hint="Почта"
+        android:inputType="textEmailAddress"
+        android:padding="10dp"
+        android:textColorHint="@color/textcolor"
+        app:layout_constraintTop_toBottomOf="@id/imageView"/>
+
+    <EditText
+        android:id="@+id/passwordEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/grayborderinv"
+        android:hint="Пароль"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        android:textColorHint="@color/textcolor"
+        app:layout_constraintTop_toBottomOf="@id/emailEdit"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/signinButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="@color/colorbutton"
+        android:text="Вход"
+        android:textColor="@color/textcolor"
+        app:layout_constraintTop_toBottomOf="@id/passwordEdit"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/signupButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="0dp"
+        android:text="Зарегистрироваться"
+        android:backgroundTint="@color/colorbutton"
+        android:textColor="@color/textcolor"
+        app:layout_constraintTop_toBottomOf="@id/signinButton"
+        />
+
+</LinearLayout>
