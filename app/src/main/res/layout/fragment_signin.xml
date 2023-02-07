@@ -12,8 +12,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_width="wrap_content"
+        android:layout_height="290dp"
         android:layout_marginTop="0dp"
         app:srcCompat="@drawable/nimble_logo" />
 
@@ -22,13 +22,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/grayborderinv"
         android:hint="Почта"
         android:inputType="textEmailAddress"
         android:padding="10dp"
         android:textColorHint="@color/textcolor"
-        app:layout_constraintTop_toBottomOf="@id/imageView"/>
+        app:layout_constraintTop_toBottomOf="@id/imageView"
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789,."
+        />
 
     <EditText
         android:id="@+id/passwordEdit"
@@ -41,7 +43,9 @@
         android:inputType="textPassword"
         android:padding="10dp"
         android:textColorHint="@color/textcolor"
-        app:layout_constraintTop_toBottomOf="@id/emailEdit"/>
+        app:layout_constraintTop_toBottomOf="@id/emailEdit"
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789,."
+        />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/signinButton"
@@ -52,7 +56,9 @@
         android:backgroundTint="@color/colorbutton"
         android:text="Вход"
         android:textColor="@color/textcolor"
-        app:layout_constraintTop_toBottomOf="@id/passwordEdit"/>
+        app:layout_constraintTop_toBottomOf="@id/passwordEdit"
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789,."
+        />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/signupButton"

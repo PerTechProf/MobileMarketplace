@@ -5,22 +5,19 @@ import android.os.Bundle
 import android.util.Log
 import android.util.Patterns
 import android.view.*
-import android.widget.Button
 import android.widget.Toast
-import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import com.example.nimble.*
+import com.example.nimble.api.ApiRequest
+import com.example.nimble.api.BASE_URL
+import com.example.nimble.api.RegisterReceiveRemote
 import com.example.nimble.databinding.FragmentSignupBinding
-import com.squareup.moshi.Moshi
+import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import retrofit2.create
-import java.net.Socket
-import java.util.Scanner
 
 
 class SignupFragment : Fragment() {
@@ -174,6 +171,7 @@ class SignupFragment : Fragment() {
     }
 
 
+    @OptIn(DelicateCoroutinesApi::class)
     fun signup(){
         val email = binding.emailEdit.text.toString()
         val firstName = binding.firstNameEdit.text.toString()
@@ -194,7 +192,7 @@ class SignupFragment : Fragment() {
                 Log.e("MAIN", "Error: ${e.message}")
             }
         }
-        val myToast = Toast.makeText(activity, "Вы авторизованны!", Toast.LENGTH_SHORT).show()
+        Toast.makeText(activity, "Вы авторизованны!", Toast.LENGTH_SHORT).show()
         MAIN.navController.navigate(R.id.action_signupFragment_to_miAccount)
 
     }

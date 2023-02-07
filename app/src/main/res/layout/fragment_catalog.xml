@@ -6,32 +6,12 @@
     tools:context=".catalog.CatalogFragment"
     android:background="@color/background">
 
-    <androidx.core.widget.NestedScrollView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true">
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <androidx.appcompat.widget.SearchView
-                android:id="@+id/nav_Search"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/actionbarcolor" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="16dp"
-                tools:listitem="@layout/staff_item"/>
-
-
-        </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+        android:layout_marginTop="16dp"
+        tools:listitem="@layout/staff_item"/>
 
 
 </FrameLayout>

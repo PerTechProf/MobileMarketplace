@@ -1,13 +1,15 @@
-package com.example.nimble
+package com.example.nimble.api
 
+import com.example.nimble.Auth
 import com.squareup.moshi.JsonClass
+import retrofit2.Call
 import retrofit2.Response
+import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Body
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
+import retrofit2.http.GET
 import retrofit2.http.POST
 
-const val BASE_URL = "http://192.168.1.104:8080/"
+const val BASE_URL = "http://192.168.0.169:8080/"
 
 @JsonClass(generateAdapter = true)
 data class RegisterReceiveRemote(
@@ -23,6 +25,16 @@ data class LoginReceiveRemote(
     val password: String
 )
 
+
+@JsonClass(generateAdapter = true)
+data class CatalogGoods(
+    val name: String,
+    val price: Double,
+    val logo : String,
+    val description : String
+)
+
+
 interface ApiRequest {
     @POST("register")
     suspend fun signup(@Body data: RegisterReceiveRemote): Response<Auth>
@@ -30,4 +42,9 @@ interface ApiRequest {
 
     @POST("login")
     suspend fun signin(@Body data: LoginReceiveRemote): Response<Auth>
+
+
+    @GET("goods/catalog")
+    fun getGoods(): Call<List<CatalogGoods>>
 }
+

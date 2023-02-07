@@ -63,7 +63,8 @@
                     android:inputType="text"
                     android:maxLength="15"
                     android:paddingHorizontal="8dp"
-                    android:paddingVertical="12dp" />
+                    android:paddingVertical="12dp"
+                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"/>
 
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -92,7 +93,8 @@
                     android:paddingHorizontal="8dp"
                     android:paddingVertical="15dp"
                     android:hint="@string/LastName"
-                    android:inputType="text"/>
+                    android:inputType="text"
+                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"/>
 
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -125,6 +127,7 @@
                     android:paddingVertical="15dp"
                     android:hint="@string/Email"
                     android:inputType="textEmailAddress"
+                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789,."
                     />
 
 
@@ -157,7 +160,9 @@
                     android:paddingHorizontal="8dp"
                     android:paddingVertical="12dp"
                     android:hint="@string/Password"
-                    android:inputType="textPassword"/>
+                    android:inputType="textPassword"
+                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789,."
+                    />
 
 
 
@@ -190,7 +195,10 @@
                 android:paddingHorizontal="8dp"
                 android:paddingVertical="12dp"
                 android:hint="@string/rePassword"
-                android:inputType="textPassword"/>
+                android:inputType="textPassword"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789,."
+                />
+
             </com.google.android.material.textfield.TextInputLayout>
 
            <com.google.android.material.button.MaterialButton

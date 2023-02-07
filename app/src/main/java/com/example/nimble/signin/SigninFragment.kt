@@ -9,8 +9,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.example.nimble.*
+import com.example.nimble.api.ApiRequest
+import com.example.nimble.api.BASE_URL
+import com.example.nimble.api.LoginReceiveRemote
 import com.example.nimble.databinding.FragmentSigninBinding
-import kotlinx.android.synthetic.main.fragment_signup.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -41,7 +43,7 @@ class SigninFragment : Fragment() {
 
     }
 
-    fun signin() {
+    private fun signin() {
         val email = binding.emailEdit.text.toString()
         val password = binding.passwordEdit.text.toString()
 
@@ -60,11 +62,11 @@ class SigninFragment : Fragment() {
                 withContext(Dispatchers.Main){
                     val token = response.body()?.token
                     if (token == null) {
-                        Toast.makeText(activity, "Пользователь отсудствует", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(activity, "Пользователь $email отсутствует", Toast.LENGTH_SHORT).show()
                     }else{
                         val intent = Intent(activity, MainActivity::class.java)
                         startActivity(intent)
-                        Toast.makeText(activity, "Добро пожаловать", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(activity, "Добро пожаловать $email", Toast.LENGTH_SHORT).show()
                     }
                 }
 
@@ -76,4 +78,3 @@ class SigninFragment : Fragment() {
 
 }
 
-//        response = api.signin(LoginReceiveRemote(email, password))
