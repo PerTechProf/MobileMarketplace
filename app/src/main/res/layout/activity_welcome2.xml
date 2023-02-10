@@ -14,6 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/source_sans_pro"
         android:foregroundGravity="center"
         android:padding="15dp"
         android:text="Добро пожаловать в Nimble"
@@ -30,11 +31,12 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="match_parent"
+        android:layout_width="411dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginHorizontal="31dp"
         android:layout_marginTop="5dp"
+        android:fontFamily="@font/source_sans_pro"
         android:text="Качественная одежда, от лучших брендов и модельеров"
         android:textAlignment="center"
         android:textColor="@color/textcolor"

@@ -12,4 +12,11 @@
     <string name="rePassword">Повторить пароль</string>
     <string name="Register">Зарегистрироваться</string>
     <string name="Back">У меня уже есть аккаунт</string>
+    <string name="entry">Вход</string>
+    <string name="register">Зарегистрироваться</string>
+    <string name="nameproduct">nameProduct</string>
+    <string name="price">price</string>
+    <string name="manufacturer">manufacturer</string>
+    <string name="description">description</string>
+    <string name="specification">specification</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.nimble
+package com.example.nimble.user
 
 import com.squareup.moshi.JsonClass
 
@@ -6,3 +6,5 @@ import com.squareup.moshi.JsonClass
 data class Auth(
     val token: String
 )
+
+var tokenUser : String? = null

@@ -10,13 +10,10 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.example.nimble.*
 import com.example.nimble.api.ApiRequest
-import com.example.nimble.api.BASE_URL
 import com.example.nimble.api.LoginReceiveRemote
 import com.example.nimble.databinding.FragmentSigninBinding
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import com.example.nimble.user.tokenUser
+import kotlinx.coroutines.*
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
@@ -28,7 +25,7 @@ class SigninFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ):View? {
+    ): View {
         binding = FragmentSigninBinding.inflate(layoutInflater, container, false)
         binding.signinButton.setOnClickListener { signin() }
         return binding.root
@@ -38,11 +35,12 @@ class SigninFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.signupButton.setOnClickListener{
-            MAIN.navController.navigate(R.id.action_miAccount_to_signupFragment)
+            MAIN.navController.navigate(R.id.action_signinFragment_to_signupFragment)
         }
 
     }
 
+    @OptIn(DelicateCoroutinesApi::class)
     private fun signin() {
         val email = binding.emailEdit.text.toString()
         val password = binding.passwordEdit.text.toString()
@@ -67,6 +65,8 @@ class SigninFragment : Fragment() {
                         val intent = Intent(activity, MainActivity::class.java)
                         startActivity(intent)
                         Toast.makeText(activity, "Добро пожаловать $email", Toast.LENGTH_SHORT).show()
+                        MAIN.navController.navigate(R.id.miAccount)
+                        tokenUser = token
                     }
                 }
 

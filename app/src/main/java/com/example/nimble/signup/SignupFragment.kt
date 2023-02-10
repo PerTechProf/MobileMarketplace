@@ -9,9 +9,10 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.nimble.*
 import com.example.nimble.api.ApiRequest
-import com.example.nimble.api.BASE_URL
 import com.example.nimble.api.RegisterReceiveRemote
 import com.example.nimble.databinding.FragmentSignupBinding
+import kotlinx.android.synthetic.main.fragment_signin.*
+import kotlinx.android.synthetic.main.fragment_signup.*
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -30,7 +31,6 @@ class SignupFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentSignupBinding.inflate(layoutInflater, container, false)
-
 
         binding.signupButton.setOnClickListener { signup() }
         emailFocusListener()
@@ -166,7 +166,7 @@ class SignupFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.back.setOnClickListener{
-            MAIN.navController.navigate(R.id.action_signupFragment_to_miAccount)
+            MAIN.navController.navigate(R.id.action_signupFragment_to_signinFragment)
         }
     }
 
@@ -193,7 +193,7 @@ class SignupFragment : Fragment() {
             }
         }
         Toast.makeText(activity, "Вы авторизованны!", Toast.LENGTH_SHORT).show()
-        MAIN.navController.navigate(R.id.action_signupFragment_to_miAccount)
+        MAIN.navController.navigate(R.id.signinFragment)
 
     }
 

@@ -20,7 +20,7 @@
         >
 
         <activity
-            android:name=".Splash_Screen"
+            android:name=".SplashScreenActivity"
             android:theme="@style/Theme.Design.NoActionBar"
             android:exported="true">
             <meta-data
@@ -34,7 +34,7 @@
         </activity>
 
         <activity
-            android:name=".welcome.LaunchActivity"
+            android:name=".launch.LaunchActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -72,6 +72,10 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

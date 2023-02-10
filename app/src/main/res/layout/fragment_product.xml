@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".pannier.ProductFragment"
+    android:background="@color/background"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/back_catalog"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorbutton"
+                android:clickable="true"
+                android:contentDescription="@string/Back"
+                android:src="@android:drawable/ic_menu_revert"
+                android:tint="@color/textcolor"
+                app:rippleColor="@color/textcolor" />
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="match_parent"
+                android:layout_height="210dp"
+                tools:src="@tools:sample/avatars"
+                />
+
+            <TextView
+                android:id="@+id/nama"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:fontFamily="@font/source_sans_pro"
+                android:text="@string/nameproduct"
+                android:textAlignment="center"
+                android:textColor="@color/textcolor"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/price_staff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/price"
+                android:layout_marginTop="10dp"
+                android:textSize="20sp"
+                android:textColor="@color/textcolor"
+                app:layout_constraintTop_toBottomOf="@id/price_staff"
+                />
+
+            <TextView
+                android:id="@+id/manufacturer"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:fontFamily="@font/source_sans_pro"
+                android:text="@string/manufacturer"
+                android:textSize="16sp"
+                android:textColor="@color/textcolor"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/price_staff"
+                />
+
+            <TextView
+                android:id="@+id/specification"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:text="@string/specification"
+                android:textColor="@color/textcolor"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/manufacturer"
+                android:layout_marginTop="10dp"
+
+                />
+
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

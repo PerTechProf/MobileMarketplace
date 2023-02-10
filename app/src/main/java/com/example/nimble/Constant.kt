@@ -2,4 +2,4 @@ package com.example.nimble
 
 lateinit var MAIN: MainActivity
 
-lateinit var USERID: String
+const val BASE_URL = "http://192.168.1.104:8080/"

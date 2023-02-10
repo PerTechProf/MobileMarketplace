@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 
-class Splash_Screen : AppCompatActivity() {
+class SplashScreenActivity : AppCompatActivity() {
 
     private val SPLASH_TIME: Long = 3000
 

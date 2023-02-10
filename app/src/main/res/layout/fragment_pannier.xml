@@ -3,9 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="pannier.PannierFragment"
-    android:background="@color/background"
-    >
+    android:background="@color/background">
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewPannier"
+        android:layout_width="match_parent"
+        android:layout_height="650dp"
+        tools:listitem="@layout/staff_item">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
 
 
 

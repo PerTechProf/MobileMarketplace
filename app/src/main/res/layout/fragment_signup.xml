@@ -9,16 +9,7 @@
     android:orientation="vertical"
     android:gravity="center_horizontal">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Создание аккаунта"
-        android:textSize="25dp"
-        android:gravity="center"
-        android:padding="10dp"
-        android:textColor="@color/textcolor"
-        android:background="@drawable/graybordertop"/>
+
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
@@ -59,12 +50,13 @@
                     android:id="@+id/firstNameEdit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+                    android:fontFamily="@font/source_sans_pro"
                     android:hint="@string/FirstName"
                     android:inputType="text"
                     android:maxLength="15"
                     android:paddingHorizontal="8dp"
-                    android:paddingVertical="12dp"
-                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"/>
+                    android:paddingVertical="12dp" />
 
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -87,14 +79,15 @@
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/lastNameEdit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/lastNameEdit"
-                    android:paddingHorizontal="8dp"
-                    android:paddingVertical="15dp"
+                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+                    android:fontFamily="@font/source_sans_pro"
                     android:hint="@string/LastName"
                     android:inputType="text"
-                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"/>
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="15dp" />
 
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -116,19 +109,19 @@
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emailEdit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/emailEdit"
+                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789,."
+                    android:fontFamily="@font/source_sans_pro"
+                    android:hint="@string/Email"
+                    android:inputType="textEmailAddress"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="15dp"
                     app:boxCornerRadiusBottomEnd="0dp"
                     app:boxCornerRadiusBottomStart="0dp"
                     app:boxCornerRadiusTopEnd="0dp"
-                    app:boxCornerRadiusTopStart="0dp"
-                    android:paddingHorizontal="8dp"
-                    android:paddingVertical="15dp"
-                    android:hint="@string/Email"
-                    android:inputType="textEmailAddress"
-                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789,."
-                    />
+                    app:boxCornerRadiusTopStart="0dp" />
 
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -154,15 +147,15 @@
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/passwordEditRegist"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/passwordEditRegist"
-                    android:paddingHorizontal="8dp"
-                    android:paddingVertical="12dp"
+                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789,."
+                    android:fontFamily="@font/source_sans_pro"
                     android:hint="@string/Password"
                     android:inputType="textPassword"
-                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789,."
-                    />
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="12dp" />
 
 
 
@@ -188,34 +181,36 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 >
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/conPasswordEdit"
-                android:paddingHorizontal="8dp"
-                android:paddingVertical="12dp"
-                android:hint="@string/rePassword"
-                android:inputType="textPassword"
-                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789,."
-                />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/conPasswordEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789,."
+                    android:fontFamily="@font/source_sans_pro"
+                    android:hint="@string/rePassword"
+                    android:inputType="textPassword"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="12dp" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
-           <com.google.android.material.button.MaterialButton
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:id="@+id/signupButton"
-               android:layout_marginTop="12dp"
-               android:insetBottom="0dp"
-               android:insetTop="0dp"
-               android:text="@string/Register"
-               android:backgroundTint="@color/colorbutton"
-               android:textColor="@color/textcolor"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/signupButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/colorbutton"
+                android:fontFamily="@font/source_sans_pro"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="@string/Register"
+                android:textColor="@color/textcolor" />
 
             <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/back"
+                android:fontFamily="@font/source_sans_pro"
                 android:layout_marginTop="12dp"
                 android:insetBottom="0dp"
                 android:insetTop="0dp"
