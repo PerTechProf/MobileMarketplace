@@ -4,13 +4,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".user.UserFragment"
+    tools:context=".User.UserFragment"
     android:background="@color/background">
 
-
     <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="match_parent"
-        android:layout_height="450dp"
-        android:src="@drawable/_146a9434e0244957899d4f570639043_1" />
+        android:id="@+id/imageProf"
+        android:layout_width="167dp"
+        android:layout_height="167dp"
+        android:layout_marginLeft="125dp"
+        android:layout_marginTop="30dp"
+        tools:src="@tools:sample/avatars" />
+
+    <EditText
+        android:id="@+id/NameUser"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="219dp"
+        android:text="Пользователь"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="30dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="280dp"
+        android:layout_marginHorizontal="30dp"
+        android:background="@color/background"
+        android:text=" Мои заказы"
+        android:textColor="@color/actionbarcolor"
+        android:textAlignment="viewStart"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="330dp"
+        android:layout_marginHorizontal="30dp"
+        android:background="@color/background"
+        android:text=" Мои купоны"
+        android:textColor="@color/actionbarcolor"
+        android:textAlignment="viewStart"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="380dp"
+        android:layout_marginHorizontal="30dp"
+        android:background="@color/background"
+        android:text=" Выход из аккаунта"
+        android:textColor="@color/red"
+        android:textAlignment="viewStart"/>
+
+
 </FrameLayout>
