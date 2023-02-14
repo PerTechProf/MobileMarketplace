@@ -9,7 +9,15 @@
         android:id="@+id/miSearch"
         android:name="com.example.nimble.catalog.CatalogFragment"
         android:label="fragment_catalog"
-        tools:layout="@layout/fragment_catalog" />
+        tools:layout="@layout/fragment_catalog" >
+        <action
+            android:id="@+id/action_miSearch_to_productFragment"
+            app:destination="@id/productFragment">
+<!--            <argument-->
+<!--                android:name="product"-->
+<!--                app:argType="com.example.nimble.api.ApiRequest.CatalogGoods" />-->
+        </action>
+    </fragment>
 
     <fragment
         android:id="@+id/miAccount"
@@ -41,6 +49,11 @@
             android:id="@+id/action_signupFragment_to_signinFragment"
             app:destination="@id/signinFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/productFragment"
+        android:name="com.example.nimble.catalog.ProductFragment"
+        android:label="fragment_product"
+        tools:layout="@layout/fragment_product" />
 
 
 </navigation>

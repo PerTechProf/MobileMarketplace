@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".pannier.ProductFragment"
+    tools:context=".catalog.ProductFragment"
     android:background="@color/background"
     >
 
@@ -17,17 +17,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/back_catalog"
-                android:layout_width="70dp"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorbutton"
-                android:clickable="true"
-                android:contentDescription="@string/Back"
-                android:src="@android:drawable/ic_menu_revert"
-                android:tint="@color/textcolor"
-                app:rippleColor="@color/textcolor" />
-
             <ImageView
                 android:id="@+id/logo"
                 android:layout_width="match_parent"
@@ -36,14 +25,16 @@
                 />
 
             <TextView
-                android:id="@+id/nama"
+                android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:fontFamily="@font/source_sans_pro"
+                android:layout_marginTop="10dp"
                 android:text="@string/nameproduct"
                 android:textAlignment="center"
                 android:textColor="@color/textcolor"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                app:layout_constraintTop_toBottomOf="@id/logo" />
 
             <TextView
                 android:id="@+id/price_staff"
@@ -57,7 +48,7 @@
                 />
 
             <TextView
-                android:id="@+id/manufacturer"
+                android:id="@+id/description"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:fontFamily="@font/source_sans_pro"
@@ -75,7 +66,7 @@
                 android:text="@string/specification"
                 android:textColor="@color/textcolor"
                 android:textSize="16sp"
-                app:layout_constraintTop_toBottomOf="@id/manufacturer"
+                app:layout_constraintTop_toBottomOf="@id/description"
                 android:layout_marginTop="10dp"
 
                 />

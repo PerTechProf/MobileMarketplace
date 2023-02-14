@@ -1,40 +1,57 @@
 package com.example.nimble.catalog
 
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.os.bundleOf
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.example.nimble.MAIN
 import com.example.nimble.R
-import com.example.nimble.api.CatalogGoods
-import retrofit2.Call
+import com.example.nimble.api.Good
 
 
 class AdapterCatalog(): RecyclerView.Adapter<AdapterCatalog.MyViewHolder>() {
 
-    private var goods = mutableListOf<CatalogGoods>()
+    private var goods = listOf<Good>()
 
-    fun setData(list: List<CatalogGoods>) {
-        this.goods.addAll(list)
+    fun setData(list: List<Good>) {
+        this.goods = list
         notifyDataSetChanged()
     }
 
 
-class MyViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
+    class MyViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
 
-    fun bind(catalogGoods: CatalogGoods) {
-        val nameItem = itemView.findViewById<TextView>(R.id.nameItem)
-        val priceStaff = itemView.findViewById<TextView>(R.id.price_staff)
-//            val logo = view.findViewById<ImageView>(R.id.logo)
-        val description = itemView.findViewById<TextView>(R.id.description_staff)
+        fun bind(good: Good) {
+            val nameItem = itemView.findViewById<TextView>(R.id.nameItem)
+            val priceStaff = itemView.findViewById<TextView>(R.id.price_staff)
+            val logo = view.findViewById<ImageView>(R.id.logo)
+            val description = itemView.findViewById<TextView>(R.id.description_staff)
 
-        nameItem.text = catalogGoods.name
-        description.text = catalogGoods.description
-        priceStaff.text = catalogGoods.price.toString()
+            nameItem.text = good.name
+            description.text = good.description
+            priceStaff.text = good.price.toString()
+            Glide.with(view.context).load(good.logo).centerCrop().into(logo)
 
-//            Glide.with(view.context).load(catalogGoods.logo).centerCrop().into(logo)
+            itemView.setOnClickListener{
+                MAIN.navController.navigate(
+                    R.id.action_miSearch_to_productFragment,
+                    bundleOf(
+                        "name" to good.name,
+                        "description" to good.description,
+                        "price" to good.price,
+                        "logo" to good.logo,
+                        "specification" to good.specification
+
+                    )
+                )
+            }
+        }
     }
-}
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val item = LayoutInflater.from(parent.context).inflate(R.layout.staff_item, parent, false)
@@ -50,27 +67,7 @@ class MyViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
         holder.bind(goods[position])
     }
 
-//    class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-//        var nameItem = itemView.findViewById<TextView>(R.id.nameItem)
-//        var priceStaff = itemView.findViewById<TextView>(R.id.price_staff)
-//        var description = itemView.findViewById<TextView>(R.id.description_staff)
-//    }
-//
-//
-//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-//        val item = LayoutInflater.from(parent.context).inflate(R.layout.staff_item, parent, false)
-//        return ViewHolder(item)
-//    }
-//
-//    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-//        holder.nameItem.text = goods[position].name
-//        holder.priceStaff.text = goods[position].price.toString()
-//        holder.description.text = goods[position].description
-//    }
-//
-//    override fun getItemCount(): Int {
-//        return goods.size
-//    }
+
 
 
 
