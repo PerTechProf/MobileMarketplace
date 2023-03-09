@@ -12,10 +12,7 @@ import com.example.nimble.BASE_URL
 import com.example.nimble.R
 import com.example.nimble.api.*
 import kotlinx.android.synthetic.main.fragment_catalog.*
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.*
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
@@ -51,6 +48,7 @@ class CatalogFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
     }
 
+    @OptIn(DelicateCoroutinesApi::class)
     private fun getGoods(){
         GlobalScope.launch(Dispatchers.IO){
             try {

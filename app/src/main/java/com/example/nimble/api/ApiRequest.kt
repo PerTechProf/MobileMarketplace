@@ -1,13 +1,8 @@
 package com.example.nimble.api
 
-import com.example.nimble.BASE_URL
 import com.example.nimble.user.Auth
 import com.squareup.moshi.JsonClass
-import com.squareup.moshi.Moshi
-import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
@@ -45,8 +40,6 @@ data class ListResponse<T>(
     val items: List<T>
 )
 
-private val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
-private val retrofit = Retrofit.Builder().addConverterFactory(MoshiConverterFactory.create(moshi)).baseUrl(BASE_URL).build()
 
 interface ApiRequest {
     @POST("register")
@@ -61,9 +54,5 @@ interface ApiRequest {
     suspend fun getGoods(): Response<ListResponse<Good>>
 
 
-}
 
-object Api {
-    val retrofitService: ApiRequest by lazy{retrofit.create(ApiRequest::class.java)}
 }
-

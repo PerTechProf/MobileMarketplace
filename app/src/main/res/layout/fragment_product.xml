@@ -27,9 +27,9 @@
             <TextView
                 android:id="@+id/name"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/source_sans_pro"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:text="@string/nameproduct"
                 android:textAlignment="center"
                 android:textColor="@color/textcolor"
@@ -40,36 +40,64 @@
                 android:id="@+id/price_staff"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="1.5dp"
                 android:text="@string/price"
-                android:layout_marginTop="10dp"
-                android:textSize="20sp"
+                android:textAlignment="center"
                 android:textColor="@color/textcolor"
-                app:layout_constraintTop_toBottomOf="@id/price_staff"
-                />
+                android:textSize="20sp"
+                app:layout_constraintTop_toBottomOf="@id/price_staff" />
+
+            <RatingBar
+                android:id="@+id/rating"
+                style="@style/Widget.AppCompat.RatingBar.Indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:progressTint="@color/gold"
+                android:rating="4.25"
+                android:layout_marginTop="12dp"
+                android:secondaryProgressTint="#FFFFFF"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/price_staff" />
 
             <TextView
                 android:id="@+id/description"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="10dp"
                 android:fontFamily="@font/source_sans_pro"
                 android:text="@string/manufacturer"
+                android:background="@drawable/grayborder"
+                android:textAlignment="center"
+                android:textColor="@color/black"
                 android:textSize="16sp"
-                android:textColor="@color/textcolor"
-                android:layout_marginTop="10dp"
-                app:layout_constraintTop_toBottomOf="@id/price_staff"
-                />
+                app:layout_constraintTop_toBottomOf="@id/price_staff" />
 
             <TextView
                 android:id="@+id/specification"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:text="@string/specification"
-                android:textColor="@color/textcolor"
-                android:textSize="16sp"
-                app:layout_constraintTop_toBottomOf="@id/description"
+                android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="10dp"
+                android:background="@drawable/grayborder"
+                android:text="@string/specification"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/description" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/addBasket"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorbutton"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/specification"
+                android:text="@string/add"
+                android:textColor="@color/textcolor"
 
                 />
+
 
 
         </LinearLayout>

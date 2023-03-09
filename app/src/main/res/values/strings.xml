@@ -19,4 +19,5 @@
     <string name="manufacturer">manufacturer</string>
     <string name="description">description</string>
     <string name="specification">specification</string>
+    <string name="add">Добавить</string>
 </resources>

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.RatingBar
 import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.recyclerview.widget.RecyclerView
@@ -27,26 +28,27 @@ class AdapterCatalog(): RecyclerView.Adapter<AdapterCatalog.MyViewHolder>() {
     class MyViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
 
         fun bind(good: Good) {
+
+            val logo = view.findViewById<ImageView>(R.id.logo)
             val nameItem = itemView.findViewById<TextView>(R.id.nameItem)
             val priceStaff = itemView.findViewById<TextView>(R.id.price_staff)
-            val logo = view.findViewById<ImageView>(R.id.logo)
-            val description = itemView.findViewById<TextView>(R.id.description_staff)
+            val rating = itemView.findViewById<RatingBar>(R.id.rating)
 
-            nameItem.text = good.name
-            description.text = good.description
-            priceStaff.text = good.price.toString()
             Glide.with(view.context).load(good.logo).centerCrop().into(logo)
+            nameItem.text = good.name
+            priceStaff.text = good.price.toString()
+            rating.rating = good.grade.toFloat()
 
             itemView.setOnClickListener{
                 MAIN.navController.navigate(
                     R.id.action_miSearch_to_productFragment,
                     bundleOf(
-                        "name" to good.name,
-                        "description" to good.description,
-                        "price" to good.price,
                         "logo" to good.logo,
+                        "name" to good.name,
+                        "price" to good.price,
+                        "rating" to good.grade,
+                        "description" to good.description,
                         "specification" to good.specification
-
                     )
                 )
             }

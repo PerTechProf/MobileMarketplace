@@ -1,55 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".User.UserFragment"
-    android:background="@color/background">
+    tools:context=".user.UserFragment"
+    android:layout_gravity="center_horizontal"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+<!--    <ImageView-->
+<!--        android:id="@+id/imageProf"-->
+<!--        android:layout_width="167dp"-->
+<!--        android:layout_height="167dp"-->
+<!--        android:layout_marginLeft="125dp"-->
+<!--        android:layout_marginTop="30dp"-->
+<!--        tools:src="@tools:sample/avatars" />-->
 
     <ImageView
         android:id="@+id/imageProf"
         android:layout_width="167dp"
         android:layout_height="167dp"
-        android:layout_marginLeft="125dp"
+        android:layout_marginStart="125dp"
         android:layout_marginTop="30dp"
-        tools:src="@tools:sample/avatars" />
+        android:src="@drawable/ic_account"/>
 
-    <EditText
-        android:id="@+id/NameUser"
-        android:layout_width="350dp"
+
+    <TextView
+        android:id="@+id/nameUser"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"
-        android:layout_marginTop="219dp"
+        android:layout_marginTop="10dp"
         android:text="Пользователь"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="30dp" />
+        android:textSize="30sp"
+        app:layout_constraintTop_toBottomOf="@id/imageProf"/>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="280dp"
+        android:layout_marginTop="10dp"
         android:layout_marginHorizontal="30dp"
         android:background="@color/background"
         android:text=" Мои заказы"
-        android:textColor="@color/actionbarcolor"
-        android:textAlignment="viewStart"/>
+        android:textColor="@color/textcolor"
+        android:textAlignment="viewStart"
+        app:layout_constraintTop_toBottomOf="@id/nameUser"/>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="330dp"
+        android:layout_marginTop="10dp"
         android:layout_marginHorizontal="30dp"
         android:background="@color/background"
         android:text=" Мои купоны"
-        android:textColor="@color/actionbarcolor"
-        android:textAlignment="viewStart"/>
+        android:textColor="@color/textcolor"
+        android:textAlignment="viewStart"
+        />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="350dp"
+        android:id="@+id/exitAcc"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="380dp"
+        android:layout_marginTop="10dp"
         android:layout_marginHorizontal="30dp"
         android:background="@color/background"
         android:text=" Выход из аккаунта"
@@ -57,4 +72,5 @@
         android:textAlignment="viewStart"/>
 
 
-</FrameLayout>
+
+</LinearLayout>

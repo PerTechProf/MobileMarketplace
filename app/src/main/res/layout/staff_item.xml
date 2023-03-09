@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="140dp"
+    android:layout_height="120dp"
     android:layout_marginStart="15dp"
     android:layout_marginTop="8dp"
     android:layout_marginEnd="16dp"
@@ -12,66 +12,113 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="121dp"
-        android:layout_height="121dp"
-        android:layout_marginStart="12dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/round_outline_rect"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.583"
         tools:srcCompat="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/price_staff"
-        android:layout_width="0dp"
-        android:layout_height="27dp"
-        android:layout_marginEnd="12dp"
-        android:fontFamily="@font/source_sans_pro"
-        android:text="Price Staff"
-        android:textAllCaps="false"
-        android:textColor="@color/textcolor"
-        android:textSize="15sp"
-        android:layout_marginStart="10dp"
-        app:layout_constraintStart_toEndOf="@id/logo"
-        app:layout_constraintBottom_toTopOf="@+id/description_staff"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintTop_toBottomOf="@+id/nameItem" />
-
-    <TextView
-        android:id="@+id/description_staff"
-        android:layout_width="0dp"
-        android:layout_height="45dp"
-        android:layout_marginEnd="12dp"
-        android:fontFamily="@font/source_sans_pro"
-        android:text="description Staff"
-        android:textAlignment="viewStart"
-        android:layout_marginStart="10dp"
-        android:textAllCaps="false"
-        android:textColor="@color/textcolor"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/logo"
-        app:layout_constraintTop_toBottomOf="@+id/price_staff" />
 
     <TextView
         android:id="@+id/nameItem"
         android:layout_width="0dp"
-        android:layout_height="33dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginStart="10dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:lines="2"
         android:fontFamily="@font/source_sans_pro"
         android:text="NameItems"
         android:textAlignment="viewStart"
         android:textColor="@color/textcolor"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/price_staff"
-        app:layout_constraintStart_toEndOf="@id/logo"
+        app:layout_constraintEnd_toStartOf="@+id/cart_product_like_btn"
+        app:layout_constraintStart_toEndOf="@+id/logo"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <ImageButton
+        android:id="@+id/cart_product_like_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/round_button"
+        android:backgroundTint="#FFFFFF"
+        android:scaleType="center"
+        app:layout_constraintBottom_toBottomOf="@+id/nameItem"
+        app:layout_constraintEnd_toStartOf="@+id/cart_product_delete_btn"
+        app:layout_constraintTop_toTopOf="@+id/nameItem"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/heart_icon_drawable"/>
+
+    <ImageButton
+        android:id="@+id/cart_product_delete_btn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/round_button"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="@+id/cart_product_like_btn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/cart_product_like_btn"
+        app:srcCompat="@drawable/ic_delete_24"
+        app:tint="@color/gray" />
+
+    <RatingBar
+        android:id="@+id/rating"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="124dp"
+        android:progressTint="@color/gold"
+        android:rating="4.25"
+        app:layout_constraintTop_toBottomOf="@+id/nameItem"
+        app:layout_constraintStart_toEndOf="@+id/logo"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:secondaryProgressTint="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="63dp" />
+
+    <TextView
+        android:id="@+id/price_staff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/source_sans_pro"
+        android:text="Price Staff"
+        android:textAllCaps="false"
+        android:textColor="@color/textcolor"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/logo"
+        app:layout_constraintTop_toBottomOf="@+id/nameItem"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/description_staff"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="45dp"-->
+<!--        android:layout_marginEnd="12dp"-->
+<!--        android:fontFamily="@font/source_sans_pro"-->
+<!--        android:text="description Staff"-->
+<!--        android:textAlignment="viewStart"-->
+<!--        android:layout_marginStart="10dp"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:textColor="@color/textcolor"-->
+<!--        android:textSize="14sp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toEndOf="@id/logo"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/price_staff" />-->
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
