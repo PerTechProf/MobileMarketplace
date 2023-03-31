@@ -31,9 +31,9 @@
 
     <fragment
         android:id="@+id/miShopping"
-        android:name="com.example.nimble.pannier.PannierFragment"
+        android:name="com.example.nimble.pannier.CartFragment"
         android:label="PannierFragment"
-        tools:layout="@layout/fragment_pannier"/>
+        tools:layout="@layout/fragment_cart"/>
     <fragment
         android:id="@+id/signinFragment"
         android:name="com.example.nimble.signin.SigninFragment"

@@ -8,7 +8,7 @@
     android:layout_marginTop="8dp"
     android:layout_marginEnd="16dp"
     android:layout_marginBottom="8dp"
-    android:background="@color/actionbarcolor">
+    android:background="@drawable/gray_item">
 
     <ImageView
         android:id="@+id/logo"
@@ -103,22 +103,6 @@
         app:layout_constraintVertical_bias="1.0" />
 
 
-<!--    <TextView-->
-<!--        android:id="@+id/description_staff"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="45dp"-->
-<!--        android:layout_marginEnd="12dp"-->
-<!--        android:fontFamily="@font/source_sans_pro"-->
-<!--        android:text="description Staff"-->
-<!--        android:textAlignment="viewStart"-->
-<!--        android:layout_marginStart="10dp"-->
-<!--        android:textAllCaps="false"-->
-<!--        android:textColor="@color/textcolor"-->
-<!--        android:textSize="14sp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toEndOf="@id/logo"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/price_staff" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

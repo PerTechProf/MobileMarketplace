@@ -23,7 +23,7 @@ class LaunchActivity : AppCompatActivity() {
         supportActionBar?.hide()
     }
 
-    fun start(){
+    private fun start(){
         val flag = sp.getBoolean("flag", false)
         if(!flag){
             val editor = sp.edit()

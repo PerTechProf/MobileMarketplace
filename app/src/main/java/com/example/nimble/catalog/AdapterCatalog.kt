@@ -1,6 +1,7 @@
 package com.example.nimble.catalog
 
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -43,6 +44,7 @@ class AdapterCatalog(): RecyclerView.Adapter<AdapterCatalog.MyViewHolder>() {
                 MAIN.navController.navigate(
                     R.id.action_miSearch_to_productFragment,
                     bundleOf(
+                        "id" to good.id,
                         "logo" to good.logo,
                         "name" to good.name,
                         "price" to good.price,
@@ -51,6 +53,7 @@ class AdapterCatalog(): RecyclerView.Adapter<AdapterCatalog.MyViewHolder>() {
                         "specification" to good.specification
                     )
                 )
+                Log.d("MAIN", "Response: ${good.id}")
             }
         }
     }

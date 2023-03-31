@@ -41,24 +41,38 @@
         android:background="@drawable/grayborderinv"
         android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789,."
         android:fontFamily="@font/source_sans_pro"
-        android:hint="Пароль"
+        android:hint="@string/password"
         android:inputType="textPassword"
         android:padding="10dp"
         android:textColorHint="@color/textcolor"
-        app:layout_constraintTop_toBottomOf="@id/emailEdit" />
+        app:layout_constraintTop_toBottomOf="@id/emailEdit"
+        android:autofillHints="" />
+
+
+    <TextView
+        android:id="@+id/errorMassage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/nunito"
+        android:text=""
+        android:textColor="@color/red"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/passwordEdit" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/signinButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="5dp"
         android:backgroundTint="@color/colorbutton"
         android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789,."
         android:fontFamily="@font/source_sans_pro"
         android:text="@string/entry"
         android:textColor="@color/textcolor"
-        app:layout_constraintTop_toBottomOf="@id/passwordEdit" />
+        app:layout_constraintTop_toBottomOf="@id/errorMassage" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/signupButton"

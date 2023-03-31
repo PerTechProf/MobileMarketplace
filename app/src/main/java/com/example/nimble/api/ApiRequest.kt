@@ -1,12 +1,21 @@
 package com.example.nimble.api
 
+import com.example.nimble.BASE_URL
 import com.example.nimble.user.Auth
 import com.squareup.moshi.JsonClass
 import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
 
+
+val api: ApiRequest = Retrofit.Builder()
+    .baseUrl(BASE_URL)
+    .addConverterFactory(MoshiConverterFactory.create().asLenient())
+    .build()
+    .create(ApiRequest::class.java)
 
 @JsonClass(generateAdapter = true)
 data class RegisterReceiveRemote(
@@ -25,6 +34,7 @@ data class LoginReceiveRemote(
 
 @JsonClass(generateAdapter = true)
 data class Good(
+    val id: String,
     val name : String,
     val price: Double,
     val manufacturer : String,
@@ -40,11 +50,22 @@ data class ListResponse<T>(
     val items: List<T>
 )
 
+@JsonClass(generateAdapter = true)
+data class UserOut(
+    val email: String,
+    val firstName: String,
+    val lastName: String
+)
+
+
 
 interface ApiRequest {
     @POST("register")
     suspend fun signup(@Body data: RegisterReceiveRemote): Response<Auth>
 
+
+//    @POST("login")
+//    suspend fun signin(@Body data: LoginReceiveRemote): Response<Auth>
 
     @POST("login")
     suspend fun signin(@Body data: LoginReceiveRemote): Response<Auth>
@@ -54,5 +75,10 @@ interface ApiRequest {
     suspend fun getGoods(): Response<ListResponse<Good>>
 
 
+    @GET("user/{id}")
+    suspend fun user() : Response<ListResponse<UserOut>>
+
 
 }
+
+

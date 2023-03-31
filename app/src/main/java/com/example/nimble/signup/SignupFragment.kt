@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import com.example.nimble.*
 import com.example.nimble.api.ApiRequest
 import com.example.nimble.api.RegisterReceiveRemote
+import com.example.nimble.api.api
 import com.example.nimble.databinding.FragmentSignupBinding
 import kotlinx.android.synthetic.main.fragment_signin.*
 import kotlinx.android.synthetic.main.fragment_signup.*
@@ -29,7 +30,7 @@ class SignupFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentSignupBinding.inflate(layoutInflater, container, false)
 
         binding.signupButton.setOnClickListener { signup() }
@@ -178,11 +179,6 @@ class SignupFragment : Fragment() {
         val lastName = binding.lastNameEdit.text.toString()
         val password = binding.passwordEditRegist.text.toString()
 
-        val api = Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .addConverterFactory(MoshiConverterFactory.create().asLenient())
-            .build()
-            .create(ApiRequest::class.java)
 
         GlobalScope.launch(Dispatchers.IO){
             try {

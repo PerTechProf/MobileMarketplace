@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.nimble.BASE_URL
 import com.example.nimble.R
 import com.example.nimble.api.*
+import com.example.nimble.databinding.FragmentCatalogBinding
 import kotlinx.android.synthetic.main.fragment_catalog.*
 import kotlinx.coroutines.*
 import retrofit2.Retrofit
@@ -20,12 +21,8 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 class CatalogFragment : Fragment() {
 
     private val adapter = AdapterCatalog()
+    private lateinit var binding: FragmentCatalogBinding
 
-    val api: ApiRequest = Retrofit.Builder()
-        .baseUrl(BASE_URL)
-        .addConverterFactory(MoshiConverterFactory.create().asLenient())
-        .build()
-        .create(ApiRequest::class.java)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

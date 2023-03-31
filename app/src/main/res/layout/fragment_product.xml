@@ -87,7 +87,7 @@
                 app:layout_constraintTop_toBottomOf="@id/description" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/addBasket"
+                android:id="@+id/addCart"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/colorbutton"
@@ -95,7 +95,6 @@
                 app:layout_constraintTop_toBottomOf="@id/specification"
                 android:text="@string/add"
                 android:textColor="@color/textcolor"
-
                 />
 
 

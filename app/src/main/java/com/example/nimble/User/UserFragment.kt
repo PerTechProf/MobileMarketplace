@@ -1,11 +1,11 @@
 package com.example.nimble.user
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.nimble.MAIN
 import com.example.nimble.R
@@ -39,7 +39,13 @@ class UserFragment : Fragment() {
             Toast.makeText(requireContext(),"Сначала требуется зарегистрироваться или войти", Toast.LENGTH_SHORT).show()
 
             findNavController().navigate(R.id.signinFragment, null)
+        }else{
+
         }
+
+
     }
+
+
 
 }

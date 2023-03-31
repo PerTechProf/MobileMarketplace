@@ -20,4 +20,8 @@
     <string name="description">description</string>
     <string name="specification">specification</string>
     <string name="add">Добавить</string>
+    <string name="Nunito" />
+    <string name="your_cart_is_empty">Ваша корзина пуста</string>
+    <string name="error">error</string>
+    <string name="password">Пароль</string>
 </resources>

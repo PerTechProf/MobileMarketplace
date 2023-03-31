@@ -14,11 +14,12 @@
     <color name="textcolor">#EDF5E1</color>
     <color name="invisible">#33FFFFFF</color>
     <color name="actionbarcolor">#474747</color>
-    <color name="red">#FF0000</color>
+    <color name="red">#B22222</color>
     <color name="transparent">#00000000</color>
     <color name="blue_accent_300">#02d5ee</color>
     <color name="gray">#999999</color>
     <color name="gold">#FFD770</color>
+    <color name="loader_background_color">#55AAAAAA</color>
 
 
 </resources>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="pannier.CartFragment"
+    android:background="@color/background">
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/cart_animation"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/empty_cart" />
+
+    <TextView
+        android:id="@+id/empty_cart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_bold"
+        android:text="@string/your_cart_is_empty"
+        android:textAlignment="center"
+        android:textColor="@color/textcolor"
+        android:textSize="35sp"
+        app:layout_constraintTop_toBottomOf="@id/cart_animation" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/nunito"
+        android:text="Наполните эту корзину вкусняшками"
+        android:textAlignment="center"
+        android:textColor="@color/textcolor"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/empty_cart" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewPannier"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/staff_item">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+
+
+
+</FrameLayout>

@@ -7,13 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.nimble.R
 
-class PannierFragment : Fragment() {
+class CartFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_pannier, container, false)
+        return inflater.inflate(R.layout.fragment_cart, container, false)
     }
 
 
