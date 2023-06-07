@@ -27,13 +27,16 @@
         <action
             android:id="@+id/action_miAccount_to_signinFragment"
             app:destination="@id/signinFragment" />
+        <action
+            android:id="@+id/action_miAccount_to_addressFragment"
+            app:destination="@id/addressFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/miShopping"
-        android:name="com.example.nimble.pannier.CartFragment"
+        android:name="com.example.nimble.pannier.CartFullFragment"
         android:label="PannierFragment"
-        tools:layout="@layout/fragment_cart"/>
+        tools:layout="@layout/fragment_cart_full"/>
     <fragment
         android:id="@+id/signinFragment"
         android:name="com.example.nimble.signin.SigninFragment"
@@ -58,6 +61,11 @@
         android:name="com.example.nimble.catalog.ProductFragment"
         android:label="fragment_product"
         tools:layout="@layout/fragment_product" />
+    <fragment
+        android:id="@+id/addressFragment"
+        android:name="com.example.nimble.user.AddressFragment"
+        android:label="fragment_address"
+        tools:layout="@layout/fragment_address" />
 
 
 </navigation>

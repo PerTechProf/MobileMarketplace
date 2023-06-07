@@ -23,8 +23,10 @@ class UserFragment : Fragment() {
         binding = FragmentUserBinding.inflate(layoutInflater, container, false)
 
 
+
         return binding.root
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -33,6 +35,10 @@ class UserFragment : Fragment() {
 
             MAIN.navController.navigate(R.id.action_miAccount_to_signinFragment)
             tokenUser = null
+        }
+
+        binding.address.setOnClickListener{
+            MAIN.navController.navigate(R.id.action_miAccount_to_addressFragment)
         }
 
         if(tokenUser == null){

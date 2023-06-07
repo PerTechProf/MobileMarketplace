@@ -12,7 +12,9 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.nimble.catalog.CatalogFragment
 import com.example.nimble.databinding.ActivityMainBinding
+import com.example.nimble.user.tokenUser
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
 
@@ -42,6 +44,14 @@ class MainActivity : AppCompatActivity() {
             R.id.miSearch, R.id.miAccount, R.id.miShopping))
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        if(tokenUser != null){
+            navView.menu.clear()
+            navView.inflateMenu(R.menu.bottom_app_bar_seller)
+        }else{
+            navView.menu.clear()
+            navView.inflateMenu(R.menu.bottom_app_bar)
+        }
 
     }
 

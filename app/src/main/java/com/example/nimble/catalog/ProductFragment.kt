@@ -8,14 +8,26 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.bumptech.glide.Glide
+import com.example.nimble.MAIN
+import com.example.nimble.R
+import com.example.nimble.api.CartItem
 import com.example.nimble.api.Good
+import com.example.nimble.api.LoginReceiveRemote
+import com.example.nimble.api.api
 import com.example.nimble.databinding.FragmentProductBinding
 import com.example.nimble.user.tokenUser
+import com.example.nimble.user.userId
+import kotlinx.android.synthetic.main.fragment_signup.*
+import kotlinx.android.synthetic.main.staff_item.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 
 class ProductFragment : Fragment() {
 
     lateinit var binding: FragmentProductBinding
+    private var vendorCode: String? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,6 +42,7 @@ class ProductFragment : Fragment() {
         val rating = arguments?.getDouble("rating")
         val description = arguments?.getString("description")
         val specification = arguments?.getString("specification")
+        vendorCode = arguments?.getString("vendorCode")
 
         activity?.let { Glide.with(it).load(logo).centerCrop().into(binding.logo) }
         binding.name.text = name ?: ""
@@ -45,16 +58,25 @@ class ProductFragment : Fragment() {
     }
 
     private fun addCart(){
-        if(tokenUser != null ){
-            val id = arguments?.getString("id")
+        if(tokenUser == null && userId == null) {
+            Toast.makeText(
+                requireContext(), "Сначала требуется зарегистрироваться или войти",
+                Toast.LENGTH_SHORT
+            ).show()
+            return
+        }
 
-        }else{
-            Toast.makeText(requireContext(),"Сначала требуется зарегистрироваться или войти",
-                Toast.LENGTH_SHORT).show()
+        CoroutineScope(Dispatchers.IO).launch {
+            val response = userId?.let { api.addCartItem(CartItem(
+                userId = it,
+                productId = vendorCode?: ""
+            )) }
+
+
+
         }
 
     }
-
 
 
 

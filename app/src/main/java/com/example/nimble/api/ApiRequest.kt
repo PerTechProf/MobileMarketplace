@@ -35,14 +35,15 @@ data class LoginReceiveRemote(
 @JsonClass(generateAdapter = true)
 data class Good(
     val id: String,
-    val name : String,
+    val name: String,
     val price: Double,
-    val manufacturer : String,
-    val logo : String,
-    val grade : Double,
-    val description : String,
-    val specification : String,
-    val availability : Int,
+    val manufacturer: String,
+    val logo: String,
+    val grade: Double,
+    val description: String,
+    val specification: String,
+    var availability: Int,
+    val vendorCode: String
 )
 
 @JsonClass(generateAdapter = true)
@@ -57,7 +58,24 @@ data class UserOut(
     val lastName: String
 )
 
+@JsonClass(generateAdapter = true)
+data class UserAddress(
+    val home_address: String,
+    val house_address: String,
+    val city: String
+)
 
+@JsonClass(generateAdapter = true)
+data class Carts(
+    val product: Good,
+    val quantity: Int,
+)
+
+@JsonClass(generateAdapter = true)
+data class CartItem(
+    val userId: String,
+    val productId: String,
+)
 
 interface ApiRequest {
     @POST("register")
@@ -78,6 +96,14 @@ interface ApiRequest {
     @GET("user/{id}")
     suspend fun user() : Response<ListResponse<UserOut>>
 
+    @POST("register/address")
+    suspend fun registerAddress(@Body data: UserAddress)
+
+    @POST("cart/")
+    suspend fun addCartItem(@Body data : CartItem)
+
+    @GET("cart/{userId}")
+    suspend fun getCartItems(userId: String) : Response<ListResponse<Carts>>
 
 }
 
