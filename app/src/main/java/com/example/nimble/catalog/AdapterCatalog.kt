@@ -50,11 +50,13 @@ class AdapterCatalog(): RecyclerView.Adapter<AdapterCatalog.MyViewHolder>() {
                         "price" to good.price,
                         "rating" to good.grade,
                         "description" to good.description,
-                        "specification" to good.specification
+                        "specification" to good.specification,
+                        "vendorCode" to good.vendorCode
                     )
                 )
                 Log.d("MAIN", "Response: ${good.id}")
             }
+
         }
     }
 

@@ -24,4 +24,6 @@
     <string name="your_cart_is_empty">Ваша корзина пуста</string>
     <string name="error">error</string>
     <string name="password">Пароль</string>
+    <string name="profile">Профиль</string>
+    <string name="create_item">Создать товар</string>
 </resources>
