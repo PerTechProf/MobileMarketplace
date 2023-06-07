@@ -3,20 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".catalog.CatalogFragment"
+    tools:context=".CouponFragment"
     android:background="@color/background">
-
-<!--    <include-->
-<!--        android:id="@+id/loader_layout"-->
-<!--        layout="@layout/layout_circular_loader"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"/>-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="0dp"
-        tools:listitem="@layout/staff_item" />
+        tools:listitem="@layout/coupon_item" />
 
 </FrameLayout>

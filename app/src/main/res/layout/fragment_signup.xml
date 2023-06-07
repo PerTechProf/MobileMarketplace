@@ -112,7 +112,7 @@
                     android:id="@+id/emailEdit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789,."
+                    android:digits="abcdefghijklmnopqrstuvwxyz@ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789,."
                     android:fontFamily="@font/source_sans_pro"
                     android:hint="@string/Email"
                     android:inputType="textEmailAddress"
