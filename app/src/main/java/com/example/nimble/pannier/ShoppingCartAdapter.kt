@@ -41,8 +41,6 @@ class ShoppingCartAdapter : RecyclerView.Adapter<ShoppingCartAdapter.MyViewHolde
             priceStaff.text = cartItem.product.price.toString()
             quantity.text = cartItem.quantity.toString()
 
-
-
         }
     }
 

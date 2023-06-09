@@ -26,4 +26,5 @@
     <string name="password">Пароль</string>
     <string name="profile">Профиль</string>
     <string name="create_item">Создать товар</string>
+    <string name="safe">Сохранить</string>
 </resources>

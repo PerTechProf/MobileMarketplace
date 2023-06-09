@@ -25,9 +25,6 @@ class CartFullFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-
-
-
         if(adapter.itemCount == 0){
             val emptyFragment = CartIsEmptyFragment()
             parentFragmentManager.beginTransaction()
@@ -45,6 +42,7 @@ class CartFullFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setupRecyclerView()
+        getGoods()
 
     }
 

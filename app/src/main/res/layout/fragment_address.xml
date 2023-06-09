@@ -57,18 +57,6 @@
         android:autofillHints="" />
 
 
-<!--    <TextView-->
-<!--        android:id="@+id/errorMassage"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="5dp"-->
-<!--        android:fontFamily="@font/nunito"-->
-<!--        android:text=""-->
-<!--        android:textColor="@color/red"-->
-<!--        android:textAlignment="center"-->
-<!--        android:textSize="16sp"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/houseAddressEdit" />-->
-
     <com.google.android.material.button.MaterialButton
         android:id="@+id/registerAddressButton"
         android:layout_width="match_parent"
@@ -77,7 +65,7 @@
         android:layout_marginTop="350dp"
         android:backgroundTint="@color/colorbutton"
         android:fontFamily="@font/source_sans_pro"
-        android:text="@string/entry"
+        android:text="@string/safe"
         android:textColor="@color/textcolor"
         app:layout_constraintTop_toBottomOf="@id/errorMassage" />
 

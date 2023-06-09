@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:fontFamily="@font/nunito"
-        android:text="Наполните эту корзину вкусняшками"
+        android:text="Пора наполнять"
         android:textAlignment="center"
         android:textColor="@color/textcolor"
         android:textSize="20sp"

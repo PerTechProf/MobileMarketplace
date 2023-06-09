@@ -6,9 +6,7 @@ import com.squareup.moshi.JsonClass
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
+import retrofit2.http.*
 
 
 val api: ApiRequest = Retrofit.Builder()
@@ -82,9 +80,6 @@ interface ApiRequest {
     suspend fun signup(@Body data: RegisterReceiveRemote): Response<Auth>
 
 
-//    @POST("login")
-//    suspend fun signin(@Body data: LoginReceiveRemote): Response<Auth>
-
     @POST("login")
     suspend fun signin(@Body data: LoginReceiveRemote): Response<Auth>
 
@@ -96,14 +91,17 @@ interface ApiRequest {
     @GET("user/{id}")
     suspend fun user() : Response<ListResponse<UserOut>>
 
+
     @POST("register/address")
     suspend fun registerAddress(@Body data: UserAddress)
+
 
     @POST("cart/")
     suspend fun addCartItem(@Body data : CartItem)
 
+
     @GET("cart/{userId}")
-    suspend fun getCartItems(userId: String) : Response<ListResponse<Carts>>
+    suspend fun getCartItems(@Path("userId") userId: String) : Response<ListResponse<Carts>>
 
 }
 

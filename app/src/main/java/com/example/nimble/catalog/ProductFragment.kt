@@ -71,10 +71,13 @@ class ProductFragment : Fragment() {
                 userId = it,
                 productId = vendorCode?: ""
             )) }
-
-
-
         }
+
+        Toast.makeText(
+            requireContext(),
+            "Товар добавлен в корзину",
+            Toast.LENGTH_SHORT
+        ).show()
 
     }
 
