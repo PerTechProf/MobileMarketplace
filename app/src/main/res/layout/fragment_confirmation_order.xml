@@ -6,6 +6,257 @@
     tools:context=".pannier.ConfirmationOrderFragment"
     android:background="@color/background">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/source_sans_pro"
+        android:foregroundGravity="center"
+        android:padding="15dp"
+        android:text="Подтверждение заказа"
+        android:textAlignment="center"
+        android:textColor="@color/textcolor"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:foregroundGravity="center"
+        android:hint="Город"
+        android:textColorHint="@color/textcolor"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/grayborderinv"
+        android:padding="10dp" />
+
+    <EditText
+        android:id="@+id/street"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:foregroundGravity="center"
+        android:hint="Улица"
+        android:textColorHint="@color/textcolor"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="125dp"
+        android:background="@drawable/grayborderinv"
+        android:padding="10dp" />
+
+    <EditText
+        android:id="@+id/home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:foregroundGravity="center"
+        android:hint="Дом"
+        android:textColorHint="@color/textcolor"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="180dp"
+        android:background="@drawable/grayborderinv"
+        android:padding="10dp" />
+
+    <EditText
+        android:id="@+id/podezd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:foregroundGravity="center"
+        android:hint="Подъезд"
+        android:textColorHint="@color/textcolor"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="235dp"
+        android:background="@drawable/grayborderinv"
+        android:padding="10dp" />
+
+    <EditText
+        android:id="@+id/flat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:foregroundGravity="center"
+        android:hint="Квартира"
+        android:textColorHint="@color/textcolor"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="290dp"
+        android:background="@drawable/grayborderinv"
+        android:padding="10dp" />
+
+    <EditText
+        android:id="@+id/number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:foregroundGravity="center"
+        android:hint="Телефон"
+        android:textColorHint="@color/textcolor"
+        android:digits="0123456789+()-"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="345dp"
+        android:background="@drawable/grayborderinv"
+        android:padding="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="500dp"
+        android:fontFamily="@font/source_sans_pro"
+        android:foregroundGravity="center"
+        android:layout_marginHorizontal="1dp"
+        android:padding="2dp"
+        android:text="Сумма к оплате"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tovar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="530dp"
+        android:fontFamily="@font/source_sans_pro"
+        android:foregroundGravity="center"
+        android:layout_marginHorizontal="1dp"
+        android:padding="2dp"
+        android:text="Товары "
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="555dp"
+        android:fontFamily="@font/source_sans_pro"
+        android:foregroundGravity="center"
+        android:layout_marginHorizontal="1dp"
+        android:padding="2dp"
+        android:text="Скидка на товары"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="580dp"
+        android:fontFamily="@font/source_sans_pro"
+        android:foregroundGravity="center"
+        android:layout_marginHorizontal="1dp"
+        android:padding="2dp"
+        android:text="Доставка"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="640dp"
+        android:fontFamily="@font/source_sans_pro"
+        android:foregroundGravity="center"
+        android:layout_marginHorizontal="1dp"
+        android:padding="2dp"
+        android:text="Итого"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/itog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="640dp"
+        android:fontFamily="@font/source_sans_pro"
+        android:layout_marginLeft="330dp"
+        android:padding="2dp"
+        android:text="1552.98$"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tovar_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="530dp"
+        android:fontFamily="@font/source_sans_pro"
+        android:layout_marginLeft="320dp"
+        android:padding="2dp"
+        android:text="14002.99$"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/skidka"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="555dp"
+        android:fontFamily="@font/source_sans_pro"
+        android:layout_marginLeft="340dp"
+        android:padding="2dp"
+        android:text="-12300$"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/dostavka"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="580dp"
+        android:fontFamily="@font/source_sans_pro"
+        android:layout_marginLeft="350dp"
+        android:padding="2dp"
+        android:text="49.99$"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/confirmzakaz_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="220dp"
+        android:layout_marginTop="670dp"
+        android:backgroundTint="@color/colorbutton"
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789,."
+        android:fontFamily="@font/source_sans_pro"
+        android:text="Подтвердить заказ"
+        android:padding="15dp"
+        android:textColor="@color/textcolor" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="500dp"
+        android:fontFamily="@font/nunito"
+        android:text=""
+        android:textColor="@color/red"
+        android:textAlignment="center"
+        android:background="@drawable/graybordertop"
+        android:textSize="16sp"
+        android:padding="130dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="670dp"
+        android:fontFamily="@font/nunito"
+        android:text=""
+        android:textColor="@color/red"
+        android:textAlignment="center"
+        android:background="@drawable/graybordertop_inv"
+        android:textSize="16sp"
+        android:padding="20dp"/>
 
 
 </FrameLayout>
