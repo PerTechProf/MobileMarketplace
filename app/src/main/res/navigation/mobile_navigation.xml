@@ -30,6 +30,9 @@
         <action
             android:id="@+id/action_miAccount_to_addressFragment"
             app:destination="@id/addressFragment" />
+        <action
+            android:id="@+id/action_miAccount_to_couponFragment"
+            app:destination="@id/couponFragment" />
     </fragment>
 
     <fragment
@@ -66,6 +69,16 @@
         android:name="com.example.nimble.user.AddressFragment"
         android:label="fragment_address"
         tools:layout="@layout/fragment_address" />
+    <fragment
+        android:id="@+id/confirmationFragment"
+        android:name="com.example.nimble.pannier.ConfirmationFragment"
+        android:label="fragment_confirmation"
+        tools:layout="@layout/fragment_confirmation" />
+    <fragment
+        android:id="@+id/couponFragment"
+        android:name="com.example.nimble.user.CouponFragment"
+        android:label="fragment_coupon"
+        tools:layout="@layout/fragment_coupon" />
 
 
 </navigation>

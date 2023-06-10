@@ -14,6 +14,7 @@ import com.example.nimble.api.api
 import com.example.nimble.user.userId
 import kotlinx.android.synthetic.main.fragment_cart_full.*
 import kotlinx.coroutines.*
+import kotlinx.coroutines.android.awaitFrame
 
 
 class CartFullFragment : Fragment() {
@@ -25,14 +26,6 @@ class CartFullFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        if(adapter.itemCount == 0){
-            val emptyFragment = CartIsEmptyFragment()
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, emptyFragment)
-                .commit()
-        }else{
-            parentFragmentManager.popBackStack()
-        }
 
 
         return inflater.inflate(R.layout.fragment_cart_full, container, false)
@@ -42,7 +35,18 @@ class CartFullFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setupRecyclerView()
-        getGoods()
+        getGoods().invokeOnCompletion {
+            if(adapter.itemCount == 0){
+                val emptyFragment = CartIsEmptyFragment()
+                parentFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, emptyFragment)
+                    .commit()
+                return@invokeOnCompletion
+            }
+
+        }
+
+
 
     }
 
@@ -53,8 +57,8 @@ class CartFullFragment : Fragment() {
 
 
     @OptIn(DelicateCoroutinesApi::class)
-    private fun getGoods(){
-        GlobalScope.launch(Dispatchers.IO){
+    private fun getGoods(): Job {
+        return GlobalScope.launch(Dispatchers.IO){
             try {
                 val response = api.getCartItems(userId?: throw Exception("UserId is null"))
                 Log.d("MAIN", "Response: $response")

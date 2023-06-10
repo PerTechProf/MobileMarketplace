@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".pannier.CartIsEmptyFragment"
+    android:layout_gravity="bottom"
     android:background="@color/background">
 
 
@@ -39,10 +40,6 @@
         app:layout_constraintTop_toBottomOf="@id/empty_cart" />
 
 
-<!--    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:id="@+id/recyclerViewCart"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        tools:listitem="@layout/staff_item">-->
+
 
 </FrameLayout>

@@ -41,7 +41,7 @@ class SigninFragment : Fragment() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         })
 
-        binding.signinButton.setOnClickListener { signin() }
+        binding.signinButton.setOnClickListener { signIn() }
         return binding.root
     }
 
@@ -55,16 +55,16 @@ class SigninFragment : Fragment() {
     }
 
 
-    private fun signin() {
+    private fun signIn() {
         val email = binding.emailEdit.text.toString()
         val password = binding.passwordEdit.text.toString()
 
         CoroutineScope(Dispatchers.IO).launch {
             val response = api.signin(LoginReceiveRemote(email, password))
-            val massege = response.errorBody()?.string()
+            val massage = response.errorBody()?.string()
 
             requireActivity().runOnUiThread{
-                binding.errorMassage.text = massege
+                binding.errorMassage.text = massage
                 val user = response.body()
 
                 if(user != null){

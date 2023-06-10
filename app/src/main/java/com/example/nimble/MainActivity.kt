@@ -45,13 +45,13 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        if(tokenUser != null){
-            navView.menu.clear()
-            navView.inflateMenu(R.menu.bottom_app_bar_seller)
-        }else{
-            navView.menu.clear()
-            navView.inflateMenu(R.menu.bottom_app_bar)
-        }
+//        if(tokenUser != null){
+//            navView.menu.clear()
+//            navView.inflateMenu(R.menu.bottom_app_bar_seller)
+//        }else{
+//            navView.menu.clear()
+//            navView.inflateMenu(R.menu.bottom_app_bar)
+//        }
 
     }
 

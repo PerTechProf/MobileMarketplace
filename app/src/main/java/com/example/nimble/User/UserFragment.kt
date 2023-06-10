@@ -41,12 +41,14 @@ class UserFragment : Fragment() {
             MAIN.navController.navigate(R.id.action_miAccount_to_addressFragment)
         }
 
+        binding.coupon.setOnClickListener {
+            MAIN.navController.navigate(R.id.action_miAccount_to_couponFragment)
+        }
+
         if(tokenUser == null){
             Toast.makeText(requireContext(),"Сначала требуется зарегистрироваться или войти", Toast.LENGTH_SHORT).show()
 
             findNavController().navigate(R.id.signinFragment, null)
-        }else{
-
         }
 
 

@@ -65,6 +65,7 @@ data class UserAddress(
 
 @JsonClass(generateAdapter = true)
 data class Carts(
+    val id: Int,
     val product: Good,
     val quantity: Int,
 )
@@ -102,6 +103,10 @@ interface ApiRequest {
 
     @GET("cart/{userId}")
     suspend fun getCartItems(@Path("userId") userId: String) : Response<ListResponse<Carts>>
+
+
+    @DELETE("cart/{id}")
+    suspend fun deleteCartItem(@Path("id") id: Int)
 
 }
 

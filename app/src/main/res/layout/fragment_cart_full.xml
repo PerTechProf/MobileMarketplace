@@ -5,15 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".pannier.CartFullFragment"
-    android:background="@color/background"
-    >
+    android:background="@color/background">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewCart"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="0dp"
-        tools:listitem="@layout/staff_item" />
+        tools:listitem="@layout/cart_item" />
+
 
 
 

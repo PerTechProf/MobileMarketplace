@@ -11,7 +11,7 @@
     android:background="@drawable/gray_item">
 
     <ImageView
-        android:id="@+id/logo"
+        android:id="@+id/logo_cart"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="8dp"
@@ -25,7 +25,7 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/nameItem"
+        android:id="@+id/nameItem_cart"
         android:layout_width="195dp"
         android:layout_height="49dp"
         android:layout_marginStart="16dp"
@@ -37,7 +37,7 @@
         android:textColor="@color/textcolor"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/logo"
+        app:layout_constraintStart_toEndOf="@+id/logo_cart"
         app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -53,13 +53,13 @@
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/nameItem"
+        app:layout_constraintStart_toEndOf="@+id/nameItem_cart"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_delete_24"
         app:tint="@color/gray" />
 
     <TextView
-        android:id="@+id/price_staff"
+        android:id="@+id/price_staff_cart"
         android:layout_width="101dp"
         android:layout_height="24dp"
         android:layout_marginStart="16dp"
@@ -70,8 +70,8 @@
         android:textColor="@color/textcolor"
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/logo"
-        app:layout_constraintTop_toBottomOf="@+id/nameItem"
+        app:layout_constraintStart_toEndOf="@+id/logo_cart"
+        app:layout_constraintTop_toBottomOf="@+id/nameItem_cart"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
@@ -86,8 +86,8 @@
         android:textColor="@color/textcolor"
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/logo"
-        app:layout_constraintTop_toBottomOf="@+id/nameItem"
+        app:layout_constraintStart_toEndOf="@+id/logo_cart"
+        app:layout_constraintTop_toBottomOf="@+id/nameItem_cart"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
@@ -102,8 +102,8 @@
         android:textColor="@color/textcolor"
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/logo"
-        app:layout_constraintTop_toBottomOf="@+id/nameItem"
+        app:layout_constraintStart_toEndOf="@+id/logo_cart"
+        app:layout_constraintTop_toBottomOf="@+id/nameItem_cart"
         app:layout_constraintVertical_bias="1.0" />
 
 
