@@ -33,14 +33,13 @@ class SignupFragment : Fragment() {
     ): View {
         binding = FragmentSignupBinding.inflate(layoutInflater, container, false)
 
-        binding.signupButton.setOnClickListener { signup() }
         emailFocusListener()
         validatePasswordFocusListener()
         validateConfirmPasswordFocusListener()
         validatePasswordAndConfirmPasswordFocusListener()
         firstNameFocusListener()
         lastNameFocusListener()
-
+        binding.signupButton.setOnClickListener { signup() }
 
         return binding.root
     }
@@ -175,14 +174,13 @@ class SignupFragment : Fragment() {
     @OptIn(DelicateCoroutinesApi::class)
     fun signup(){
         val email = binding.emailEdit.text.toString()
+        val password = binding.passwordEditRegist.text.toString()
         val firstName = binding.firstNameEdit.text.toString()
         val lastName = binding.lastNameEdit.text.toString()
-        val password = binding.passwordEditRegist.text.toString()
-
 
         GlobalScope.launch(Dispatchers.IO){
             try {
-                val response = api.signup(RegisterReceiveRemote(email, firstName, lastName, password))
+                val response = api.signup(RegisterReceiveRemote(email, password, firstName, lastName))
                 Log.d("MAIN", "Response: $response")
             }catch (e: Exception){
                 Log.e("MAIN", "Error: ${e.message}")
